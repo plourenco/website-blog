@@ -8,7 +8,9 @@ module.exports = {
     url: 'https://plourenco.com',
     keywords: 'software, engineer, java, javascript, react, pedro, lourenco',
     social: {
-      twitter: '@pedroglourenco',
+      twitter: 'pedroglourenco',
+      linkedIn: 'pedrogilourenco',
+      github: 'plourenco',
     },
   },
   plugins: [
@@ -18,6 +20,7 @@ module.exports = {
         alias: {
           app: path.resolve(__dirname, 'src/'),
           components: path.resolve(__dirname, 'src/components/'),
+          hooks: path.resolve(__dirname, 'src/hooks'),
           assets: path.resolve(__dirname, 'src/assets/'),
           static: path.resolve(__dirname, 'static/'),
         },

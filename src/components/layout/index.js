@@ -13,7 +13,7 @@ import icon196 from 'assets/icons/favicon-196x196.png'
 import icon32 from 'assets/icons/favicon-32x32.png'
 import icon96 from 'assets/icons/favicon-96x96.png'
 import favicon from 'assets/icons/favicon.ico'
-import { graphql, useStaticQuery } from 'gatsby'
+import { useMetadata } from 'hooks/metadata'
 import Container from 'react-bootstrap/Container'
 import Footer from './footer'
 import Header from './header'
@@ -24,23 +24,7 @@ import './index.scss'
 
 export default function Layout({ children }) {
   const [isDarkMode, setDarkMode] = useTheme()
-  const {
-    site: { siteMetadata: meta },
-  } = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-          description
-          url
-          keywords
-          social {
-            twitter
-          }
-        }
-      }
-    }
-  `)
+  const meta = useMetadata()
 
   return (
     <ThemeContext.Provider value={{ isDarkMode, setDarkMode }}>
@@ -57,7 +41,7 @@ export default function Layout({ children }) {
         <meta property="og:locale" content="en_GB" />
 
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:creator" content={meta.social.twitter} />
+        <meta name="twitter:creator" content={`@${meta.social.twitter}`} />
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
 

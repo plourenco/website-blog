@@ -2,14 +2,15 @@ import React from 'react'
 import {
   faLinkedin,
   faGithub,
-  faQuora,
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useSocials } from 'hooks/socials'
 import Container from 'react-bootstrap/Container'
 import styles from './footer.module.scss'
 
 export default function Footer() {
+  const socials = useSocials()
   return (
     <footer className={styles.footer}>
       <Container className="d-flex justify-content-between">
@@ -17,27 +18,21 @@ export default function Footer() {
         <div className={styles.icons}>
           <a
             target="_blank"
-            href="https://www.linkedin.com/in/pedrogilourenco/"
+            href={`https://www.linkedin.com/in/${socials.linkedIn}`}
             rel="noopener noreferrer">
             <FontAwesomeIcon icon={faLinkedin} />
           </a>
           <a
             target="_blank"
-            href="https://github.com/plourenco"
+            href={`https://github.com/${socials.github}`}
             rel="noopener noreferrer">
             <FontAwesomeIcon icon={faGithub} />
           </a>
           <a
             target="_blank"
-            href="https://www.twitter.com/pedroglourenco"
+            href={`https://www.twitter.com/${socials.twitter}`}
             rel="noopener noreferrer">
             <FontAwesomeIcon icon={faTwitter} />
-          </a>
-          <a
-            target="_blank"
-            href="https://www.quora.com/profile/Pedro-Louren%C3%A7o-25"
-            rel="noopener noreferrer">
-            <FontAwesomeIcon icon={faQuora} />
           </a>
         </div>
       </Container>
