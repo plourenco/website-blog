@@ -1,6 +1,7 @@
 import React from 'react'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import nightOwl from 'prism-react-renderer/themes/nightOwl'
+import styles from './code-block.module.scss'
 
 const rangeRegex = /{((\d|\d-\d)(?:,(\d|\d-\d))*)}/
 
@@ -15,7 +16,7 @@ const linesToHighlight = meta => {
 
   return index =>
     lines.some(([start, end]) =>
-      end ? index + 1 >= start && index <= end : index === start
+      end ? index >= start && index <= end : index === start
     )
 }
 
@@ -29,19 +30,17 @@ export default function CodeBlock({ children, className, metastring }) {
       code={children}
       language={language}
       theme={nightOwl}>
-      {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre className={className} style={{ ...style }}>
+      {({ style, tokens, getLineProps, getTokenProps }) => (
+        <pre className={styles.pre} style={{ ...style }}>
           {tokens.map((line, index) => {
             const lineProps = getLineProps({ line, key: index })
             // Ensure blank lines/spaces drop onto a new line
             if (index === tokens.length - 1 && !line.content) {
               return null
             }
-            if (line.length === 1 && line[0].content === '') {
-              line[0].content = ' '
-            }
+            // Highlight the line
             if (highlight(index)) {
-              lineProps.className = `${lineProps.className} highlight-line`
+              lineProps.className += ' ' + styles.highlightLine
             }
             return (
               <div key={index} {...lineProps}>

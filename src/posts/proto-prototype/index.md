@@ -142,7 +142,7 @@ Son.__proto__ = Parent
   with `Son`'s instance. This is the exact purpose of
   [`call`](https://developer.mozilla.org/pt-PT/docs/Web/JavaScript/Reference/Global_Objects/Function/Call).
 
-```javascript {2}
+```javascript {2-3}
 function Son() {
   Parent.call(this) // inherit the name
   this.name = 'son'

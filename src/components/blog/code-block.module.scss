@@ -1,0 +1,19 @@
+.pre {
+  font-family: Monaco, Menlo, Consolas, source-code-pro, Courier New, monospace;
+  font-size: 0.95rem;
+  padding: 2em;
+  margin-bottom: 0;
+  float: left;
+  min-width: 100%;
+  overflow: unset;
+  -webkit-font-smoothing: initial;
+}
+
+.highlight-line {
+  display: block;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-left: 4px solid var(--warning-color);
+  padding-left: 1.7rem;
+  margin-left: -1.9rem;
+  margin-right: -1.9rem;
+}
