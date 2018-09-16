@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'Monsieur Pomme';
+  src: url('/assets/fonts/Monsieur-Pomme.otf') format('opentype');
+  font-weight: 300;
+}
+
+.layout {
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+
+  p {
+    font-size: 18px;
+  }
+
+  .signature {
+    font-family: 'Monsieur Pomme', sans-serif;
+    font-size: 150px;
+  }
+}
