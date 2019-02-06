@@ -1,7 +1,90 @@
+@import '~app/common/fonts.scss';
+@import '~app/common/screens.scss';
+
 body, html {
-    font-family: "Lato", sans-serif;
-    width: 100%;
-    min-height: 100%;
-    overflow-x: hidden;
-    background-color: white;
+  font-family: "Open Sans", sans-serif;
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  background-color: white;
+  -webkit-font-smoothing: antialiased;
 }
+
+header {
+  text-align: center;
+
+  p {
+    font-family: "Monsieur Pomme", sans-serif;
+    font-size: 70px;
+  }
+}
+
+.footer {
+  background: #061D25;
+  padding: 20px 0;
+}
+.footer a {
+  color: #70726F;
+  font-size: 20px;
+  padding: 20px;
+  transition: all .5s ease;
+}
+.footer a:hover {
+  color: white;
+}
+
+#navigation {
+  @media (min-width: 992px) {
+    display: block;
+  }
+
+  .navigation-menu {
+    font-size: 15px;
+    list-style: none;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .navigation-menu > li {
+    display: inline-block;
+    padding: 18px;
+    cursor: pointer;
+  }
+
+  .navigation-menu > li > a {
+    display: block;
+    color: #333;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 18px;
+  }
+
+  .navigation-menu > li > .sub-menu {
+    position: absolute;
+    box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.1);
+    margin-top: 15px;
+    padding: 10px 30px 10px 0;
+    text-align: left;
+    background: white;
+    opacity: 0;
+    visibility: hidden;
+
+    li {
+      position: relative;
+      padding: 10px 20px;
+      display: block;
+
+      a {
+        left: 0;
+        color: #6e7178;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
