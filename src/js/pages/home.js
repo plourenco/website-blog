@@ -29,7 +29,7 @@ export default class Home extends React.Component {
             <div className='layout'>
                 <section id='home' className='fullscreen'>
                     <div className='row'>
-                        <div className='col-12 col-md-8 cover'>
+                        <div className='col-12 col-md-12 cover'>
                             <Typist cursor={{ show: false }} onTypingDone={ this.typingDone }>
                                 <span className='section-title'>Hi, I'm Pedro, a Rocket Engineer</span>
                                 <Typist.Backspace count={17} delay={1000}/>
@@ -38,7 +38,7 @@ export default class Home extends React.Component {
                                 <span className='section-title'>a Software Engineer!</span>
                             </Typist>
                         </div>
-                        <div className='col-12 col-md-4'>
+                        <div className='col-12 col-md-12'>
                             <Rocket active={ this.state.rocketActive }/>
                         </div>
                     </div>
@@ -63,7 +63,7 @@ export default class Home extends React.Component {
                         <h1 className='section-title'>A few things I've done</h1>
                     </div>
                     <div className='section-text'>
-                        <div className='row mb-5'>
+                        <div className='row mobile mb-5'>
                             <div className='col-12 offset-md-2 col-md-4'>
                                 <div className="card h-100">
                                     <img className="card-img-top"
@@ -101,7 +101,7 @@ export default class Home extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <div className='row'>
+                        <div className='row mobile'>
                             <div className='col-12 offset-sm-4 col-sm-4'>
                                 <div className="card h-100">
                                     <img className="card-img-top"

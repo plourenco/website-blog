@@ -8,10 +8,7 @@
 }
 
 .cover {
-  @media (max-width: $screen-md) {
-    text-align: center;
-    margin-bottom: 80px;
-  }
+  text-align: center;
 }
 
 section {
@@ -21,17 +18,17 @@ section {
   }
 
   @media (min-width: $screen-md) {
-    padding: 100px 60px 60px 60px;
+    padding: 100px 60px 60px;
   }
 
   @media (max-width: $screen-md) {
-    padding: 100px 40px 60px 40px;
+    padding: 100px 40px 60px;
   }
 }
 
 section.fullscreen {
-  padding: 100px 80px 60px 80px;
-  height: 65vh;
+  padding-top: 40px;
+  height: 80vh;
 }
 
 section.sepia {
@@ -79,6 +76,12 @@ section .section-text, section.sepia .section-text {
 
   @media (max-width: $screen-md) {
     padding: 0 0 20px 0;
+  }
+}
+
+.row.mobile > *:not(:last-child) {
+  @media (max-width: $screen-sm) {
+    margin-bottom: 40px;
   }
 }
 
@@ -133,14 +136,12 @@ section .section-text, section.sepia .section-text {
  */
 
 #rocket {
+  display: block;
   position: absolute;
-  width: 320px;
-  height: 320px;
-  margin-top: -100px;
-
-  @media (max-width: $screen-md) {
-    padding-right: 40px;
-  }
+  width: 50vw;
+  height: 50vh;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 
 #rocket.end #laptop {
