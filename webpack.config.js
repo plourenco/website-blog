@@ -1,24 +1,26 @@
-const debug = process.env.NODE_ENV !== "production";
+const debug = process.env.NODE_ENV !== 'production';
 const webpack = require('webpack');
 const path = require('path');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
-    context: path.join(__dirname, "src"),
-    devtool: debug ? "inline-sourcemap" : null,
-    entry: "./js/main.js",
+    entry: {
+        main: ['@babel/polyfill', './js/main.js']
+    },
+    context: path.join(__dirname, 'src'),
+    devtool: debug && 'inline-sourcemap',
     module: {
-        loaders: [
-            {
-                test: /\.json$/,
-                loader: "json-loader"
-            },
+        rules: [
             {
                 test: /\.jsx?$/,
                 exclude: /(node_modules|bower_components)/,
                 loader: 'babel-loader',
                 query: {
-                    presets: ['react', 'es2015', 'stage-0'],
-                    plugins: ['react-html-attrs', 'transform-class-properties', 'transform-decorators-legacy']
+                    presets: ['@babel/react', '@babel/env'],
+                    plugins: [
+                        '@babel/plugin-proposal-class-properties',
+                        '@babel/plugin-syntax-dynamic-import'
+                    ]
                 }
             },
             {
@@ -31,11 +33,15 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: [
-                    { loader: "style-loader" },
+                    { loader: 'style-loader' },
                     { loader: 'css-loader' },
-                    { loader: "sass-loader" }
+                    { loader: 'sass-loader' }
                 ]
 
+            },
+            {
+                test: /\.json$/,
+                loader: 'json-loader'
             },
             {
                 test: /\.svg$/,
@@ -60,12 +66,43 @@ module.exports = {
         extensions: ['.css', '.js', '.jsx']
     },
     output: {
-        path: __dirname + "/src/",
-        filename: "main.min.js"
+        path: __dirname + '/src/',
+        publicPath: '',
+        filename: '[name].min.js'
     },
-    plugins: debug ? [] : [
-        new webpack.optimize.DedupePlugin(),
-        new webpack.optimize.OccurenceOrderPlugin(),
-        new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
+    plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.HashedModuleIdsPlugin(),
     ],
+    optimization: {
+        minimizer: [
+            // we specify a custom UglifyJsPlugin here to get source maps in production
+            new UglifyJsPlugin({
+                cache: true,
+                parallel: true,
+                uglifyOptions: {
+                    compress: false,
+                    ecma: 6,
+                    mangle: true
+                },
+                sourceMap: true
+            })
+        ],
+        /*runtimeChunk: 'single',
+        splitChunks: {
+            chunks: 'all',
+            maxInitialRequests: Infinity,
+            minSize: 0,
+            cacheGroups: {
+                vendor: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name(module) {
+                        const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
+                        // npm package names are URL-safe, but some servers don't like @ symbols
+                        return `npm.${packageName.replace('@', '')}`;
+                    },
+                },
+            },
+        }*/
+    }
 };

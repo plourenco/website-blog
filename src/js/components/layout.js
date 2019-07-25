@@ -11,10 +11,6 @@ export default class LayoutBlank extends React.Component {
         super();
     }
 
-    static contextTypes = {
-        router: React.PropTypes.object.isRequired
-    };
-
     render () {
         return (
             <div>

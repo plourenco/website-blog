@@ -8,6 +8,7 @@ require('./home.scss');
 export default class Home extends React.Component {
 
     constructor(props) {
+        console.log('hey');
         super(props);
         this.state = {
             rocketActive: ''

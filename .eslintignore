@@ -1,0 +1,6 @@
+/src/assets
+/src/main.min.js
+webpack.config.js
+webpack.test.js
+karma.config.js
+babel.config.js
