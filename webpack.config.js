@@ -2,6 +2,7 @@ const debug = process.env.NODE_ENV !== 'production';
 const webpack = require('webpack');
 const path = require('path');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -66,13 +67,19 @@ module.exports = {
         extensions: ['.css', '.js', '.jsx']
     },
     output: {
-        path: __dirname + '/src/',
+        path: __dirname + 'dist/',
         publicPath: '',
         filename: '[name].min.js'
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new webpack.HashedModuleIdsPlugin(),
+        new CopyPlugin([
+            {
+                from: 'assets',
+                to: '../dist/assets'
+            }
+        ])
     ],
     optimization: {
         minimizer: [
