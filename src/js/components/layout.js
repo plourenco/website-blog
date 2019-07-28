@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router'
 import Footer from './footer';
 import Header from './header';
-
-require('./layout.scss');
+import Home from 'app/pages/home';
+import { Switch, Route } from 'react-router-dom';
+import './layout.scss';
 
 export default class LayoutBlank extends React.Component {
 
@@ -15,7 +15,9 @@ export default class LayoutBlank extends React.Component {
         return (
             <div>
                 <Header/>
-                { this.props.children }
+                <Switch>
+                    <Route path='/' component={Home} />
+                </Switch>
                 <Footer/>
             </div>
         );

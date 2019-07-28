@@ -1,14 +1,12 @@
 import React from 'react';
 import Rocket from 'app/components/rocket';
 import Typist from 'react-typist';
-
-require('react-typist/dist/Typist.css');
-require('./home.scss');
+import 'react-typist/dist/Typist.css';
+import './home.scss';
 
 export default class Home extends React.Component {
 
     constructor(props) {
-        console.log('hey');
         super(props);
         this.state = {
             rocketActive: ''
@@ -31,13 +29,14 @@ export default class Home extends React.Component {
                 <section id='home' className='fullscreen'>
                     <div className='row'>
                         <div className='col-12 col-md-12 cover'>
-                            <Typist cursor={{ show: false }} onTypingDone={ this.typingDone }>
+                            { this.state.rocketActive !== '' &&
+                            <Typist cursor={{ show: false }} onTypingDone={ this.typingDone } avgTypingDelay={60}>
                                 <span className='section-title'>Hi, I'm Pedro, a Rocket Engineer</span>
                                 <Typist.Backspace count={17} delay={1000}/>
                                 <span className='section-title'>I mean...</span>
                                 <Typist.Backspace count={9} delay={500}/>
                                 <span className='section-title'>a Software Engineer!</span>
-                            </Typist>
+                            </Typist> }
                         </div>
                         <div className='col-12 col-md-12'>
                             <Rocket active={ this.state.rocketActive }/>
