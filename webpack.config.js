@@ -67,7 +67,7 @@ module.exports = {
         extensions: ['.css', '.js', '.jsx']
     },
     output: {
-        path: __dirname + 'dist/',
+        path: path.join(__dirname, 'dist/'),
         publicPath: '',
         filename: '[name].min.js'
     },

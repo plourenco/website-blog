@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint ./src",
     "start": "webpack-dev-server --content-base src --inline --hot",
-    "prod": "webpack -p",
+    "prod": "NODE_ENV=production webpack -p",
     "test": "NODE_ENV=test node ./node_modules/karma/bin/karma start"
   },
   "dependencies": {
