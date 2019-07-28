@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const path = require('path');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -72,6 +73,9 @@ module.exports = {
         filename: '[name].min.js'
     },
     plugins: [
+        new HtmlWebpackPlugin({
+            template: path.join(__dirname, 'src/index.html')
+        }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.HashedModuleIdsPlugin(),
         new CopyPlugin([
