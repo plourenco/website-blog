@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build
+      run: |
+        npm install
+        npm run build
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@3.5.9
+      with:
+        GIT_CONFIG_NAME: ${{ secrets.GIT_CONFIG_NAME }}
+        GIT_CONFIG_EMAIL: ${{ secrets.GIT_CONFIG_EMAIL }}
+        CLEAN: true
+        BRANCH: gh-pages
+        FOLDER: public
+        SILENT: true
