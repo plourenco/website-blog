@@ -1,0 +1,23 @@
+@import "assets/screens.scss";
+
+.footer {
+  font-size: 0.9rem;
+  padding: 2rem 0;
+
+  @media (max-width: $screen-lg) {
+    padding: 1rem 0;
+  }
+}
+
+.icons {
+  a {
+    font-size: 1.3em;
+    margin: 0 0.5em;
+    color: #CCCED7;
+    transition: all 0.5s;
+  }
+
+  &:hover {
+    color: var(--body-font);
+  }
+}

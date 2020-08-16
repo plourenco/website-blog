@@ -21,3 +21,8 @@ yarn-debug.log*
 yarn-error.log*
 
 package-lock.json
+
+# local
+dist
+public
+.cache

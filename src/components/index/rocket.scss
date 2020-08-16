@@ -1,0 +1,108 @@
+/**
+ * Animations
+ */
+
+#rocket #thruster-1,
+#rocket #thruster-2,
+#rocket #tank {
+  transform: rotate(0deg);
+  transition: all 800ms ease-in;
+}
+
+#rocket:hover #tank {
+  transform: translate(100px, 500px) rotate(30deg);
+  transition: all 1300ms ease-in;
+}
+
+#rocket:hover #thruster-1 {
+  transform: translate(-300px, 800px) rotate(-60deg);
+  transition: all 1300ms ease-in;
+}
+
+#rocket:hover #thruster-2 {
+  transform: translate(400px, 800px) rotate(60deg);
+  transition: all 1300ms ease-in;
+}
+
+#rocket #s-star,
+#rocket #x-star {
+  visibility: hidden;
+}
+
+#rocket #booster {
+  visibility: hidden;
+}
+
+#rocket.active #s-star {
+  visibility: visible;
+  animation: starTranslate 14s infinite linear;
+}
+
+#rocket.active #x-star {
+  visibility: visible;
+  animation: starTranslate 7s infinite linear;
+}
+
+#rocket.active #booster {
+  visibility: visible;
+  animation: flutter 3s infinite linear;
+  transform-origin: 150px 220px;
+}
+
+#rocket.active #rocket-body {
+  animation: shake 1.5s infinite linear;
+}
+
+@keyframes starTranslate {
+  from {
+    transform: translateY(-300px);
+  }
+  to {
+    transform: translateY(300px);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  30% {
+    transform: translateX(2px);
+  }
+  70% {
+    transform: translateX(-2px);
+  }
+}
+
+@keyframes flutter {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  63%,
+  63.9%,
+  65%,
+  69.9% {
+    opacity: 0.4;
+  }
+  25% {
+    transform: scale(0.89);
+  }
+  62.9%,
+  64%,
+  64.9%,
+  70% {
+    opacity: 1;
+  }
+  40% {
+    transform: scale(0.95);
+  }
+  60% {
+    transform: scale(0.9);
+  }
+  80% {
+    transform: scale(0.98);
+  }
+}

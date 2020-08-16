@@ -1,0 +1,16 @@
+{
+  "semi": false,
+  "singleQuote": true,
+  "arrowParens": "avoid",
+  "jsxBracketSameLine": true,
+  "endOfLine": "lf",
+  "useTabs": false,
+  "trailingComma": "es5",
+  "proseWrap": "always",
+  "overrides": [
+    {
+      "files": [".prettierrc"],
+      "options": { "parser": "json" }
+    }
+  ]
+}

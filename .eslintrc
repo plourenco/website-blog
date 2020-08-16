@@ -1,0 +1,25 @@
+{
+  "extends": ["react-app"],
+  "plugins": ["react-hooks", "prettier"],
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "prettier/prettier": "error",
+    "import/no-cycle": "error",
+    "import/order": ["error", {
+      "groups": ["builtin", "external", "parent", "sibling", "index"],
+      "alphabetize": {
+        "order": "asc",
+        "caseInsensitive": true
+      },
+      "pathGroups": [
+        {
+          "pattern": "react",
+          "group": "external",
+          "position": "before"
+        }
+      ],
+      "pathGroupsExcludedImportTypes": ["builtin"]
+    }]
+  }
+}

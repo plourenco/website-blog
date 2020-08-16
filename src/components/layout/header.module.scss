@@ -1,0 +1,51 @@
+@import "assets/screens.scss";
+
+.navbar {
+  margin-bottom: 5rem;
+
+  @media (max-width: $screen-lg) {
+    margin-bottom: 3rem;
+  }
+}
+
+.brand {
+  color: unset;
+
+  h1 {
+    font-family: var(--header-font);
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    color: #CCCED7;
+    text-transform: uppercase;
+    margin: 0;
+    transition: all 1s;
+
+    &:hover {
+      color: var(--text-color);
+    }
+
+    @media (max-width: $screen-lg) {
+      font-size: calc(1.345rem + 1.14vw);
+    }
+  }
+}
+
+.nav {
+  margin-left: auto;
+
+  a {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--secondary-text-color);
+    transition: all 0.5s;
+
+    &:hover {
+      color: var(--text-color);
+    }
+  }
+
+  @media (max-width: $screen-lg) {
+    text-align: center;
+  }
+}
