@@ -4,7 +4,7 @@ import Heading from 'components/index/heading'
 import Layout from 'components/layout'
 import { graphql } from 'gatsby'
 
-export default function Home({ data }) {
+export default function HomePage({ data }) {
   return (
     <Layout>
       <Heading />

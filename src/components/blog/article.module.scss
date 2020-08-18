@@ -1,10 +1,15 @@
 @import "assets/screens.scss";
 
 .title {
+  font-size: 1.1rem;
   font-weight: 400;
-  line-height: 1.7em;
+  line-height: 1.8rem;
 
   @media (max-width: $screen-lg) {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
+}
+
+.article {
+  margin-bottom: 2rem;
 }

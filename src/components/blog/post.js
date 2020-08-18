@@ -45,8 +45,8 @@ export default function Blog({ data }) {
             <a target="_blank" href="https://www.twitter.com/pedroglourenco">
               Twitter
             </a>{' '}
-            or edit this page in{' '}
-            <a target="_blank" href="https://github.com/plourenco">
+            or edit this page on{' '}
+            <a target="_blank" href="https://github.com/plourenco/website-blog">
               Github
             </a>
             .

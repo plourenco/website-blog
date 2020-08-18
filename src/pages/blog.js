@@ -3,7 +3,7 @@ import Articles from 'components/blog/articles'
 import Layout from 'components/layout'
 import { graphql } from 'gatsby'
 
-export default function Blog({ data }) {
+export default function BlogPage({ data }) {
   return (
     <Layout>
       <Articles data={data.allMdx.nodes} />
