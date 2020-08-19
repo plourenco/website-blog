@@ -36,15 +36,15 @@ export default function Rocket({ className }) {
       <g id="rocket-body">
         <g id="booster">
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             fill="#F8E9A1"
             d="M149.8,265.4c5.9-7.8,17.2-32.1,0.4-33
 			C133.4,231.4,143.5,256.5,149.8,265.4L149.8,265.4z"
           />
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             fill="#F76C6C"
             d="M149.9,265.7c2.6-7.1,8.3-24.8,0.4-25.2
 			C142.4,240,146.7,256.5,149.9,265.7L149.9,265.7z"
@@ -69,7 +69,7 @@ export default function Rocket({ className }) {
             <polygon
               opacity="8.000000e-02"
               fill="#333333"
-              enable-background="new    "
+              enableBackground="new    "
               points="179.4,218.2 179.4,218.3 192.5,218.3 
 				192.5,170.2 179.4,145.4 			"
             />
@@ -80,27 +80,25 @@ export default function Rocket({ className }) {
               width="11.2"
               height="9.9"
             />
-
             <line
               opacity="0.2"
               fill="none"
               stroke="#333333"
-              stroke-width="1.8"
-              stroke-miterlimit="10"
-              enable-background="new    "
+              strokeWidth="1.8"
+              strokeMiterlimit="10"
+              enableBackground="new    "
               x1="179.4"
               y1="148.9"
               x2="192.5"
               y2="148.9"
             />
-
             <line
               opacity="0.2"
               fill="none"
               stroke="#333333"
-              stroke-width="1.8"
-              stroke-miterlimit="10"
-              enable-background="new    "
+              strokeWidth="1.8"
+              strokeMiterlimit="10"
+              enableBackground="new    "
               x1="179.4"
               y1="177.9"
               x2="192.5"
@@ -126,27 +124,25 @@ export default function Rocket({ className }) {
               width="11.2"
               height="9.9"
             />
-
             <line
               opacity="0.2"
               fill="none"
               stroke="#333333"
-              stroke-width="1.8"
-              stroke-miterlimit="10"
-              enable-background="new    "
+              strokeWidth="1.8"
+              strokeMiterlimit="10"
+              enableBackground="new    "
               x1="107.3"
               y1="148.9"
               x2="120.4"
               y2="148.9"
             />
-
             <line
               opacity="0.2"
               fill="none"
               stroke="#333333"
-              stroke-width="1.8"
-              stroke-miterlimit="10"
-              enable-background="new    "
+              strokeWidth="1.8"
+              strokeMiterlimit="10"
+              enableBackground="new    "
               x1="107.3"
               y1="177.9"
               x2="120.4"
@@ -158,16 +154,16 @@ export default function Rocket({ className }) {
           <path
             fill="#E85763"
             stroke="#333333"
-            stroke-width="3"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-miterlimit="10"
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeMiterlimit="10"
             d="
 			M171.4,192.9v-100c0-10.8-9.6-24.3-21.4-24.3s-21.4,13.5-21.4,24.3v100H171.4L171.4,192.9L171.4,192.9z"
           />
           <path
             opacity="0.1"
-            enable-background="new    "
+            enableBackground="new    "
             d="M150,68.7c-2.9,0-5.7,0.8-8.3,2.3c1-0.2,1.9-0.3,2.9-0.3
 			c11.8,0,21.4,13.5,21.4,24.3v98h5.3V92.9C171.4,82.2,161.8,68.7,150,68.7z"
           />
@@ -251,18 +247,18 @@ export default function Rocket({ className }) {
             <path
               fill="#333333"
               stroke="#333333"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-miterlimit="10"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeMiterlimit="10"
               d="M148.2,108.3
 				c-3.3,0.6-5.9,3.5-7,7.2c1.7-2.1,4.2-3.6,7-3.9V108.3z"
             />
             <path
               fill="#333333"
               stroke="#333333"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-miterlimit="10"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeMiterlimit="10"
               d="M151.5,108.2
 				v3.5c2.9,0.2,5.6,1.7,7.4,3.9C157.7,111.6,154.9,108.7,151.5,108.2z"
             />
@@ -271,14 +267,13 @@ export default function Rocket({ className }) {
             fill="#EBEBEB"
             d="M150,192.8V224h6.3c0.9-3,1.9-6.8,2.9-10.9l-7.7-20.3L150,192.8L150,192.8z"
           />
-
           <line
             fill="none"
             stroke="#333333"
-            stroke-width="3"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-miterlimit="10"
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeMiterlimit="10"
             x1="150.1"
             y1="232.4"
             x2="150.1"

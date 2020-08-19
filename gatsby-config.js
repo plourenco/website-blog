@@ -2,10 +2,14 @@ const path = require('path')
 
 module.exports = {
   siteMetadata: {
-    title: 'Pedro Lourenço, Software Engineer',
+    title: 'Pedro Lourenço — Software Engineer',
     description: 'Personal website and blog by Pedro Lourenço.',
     author: 'Pedro Lourenço',
-    siteUrl: 'https://plourenco.com',
+    url: 'https://plourenco.com',
+    keywords: 'test',
+    social: {
+      twitter: '@pedroglourenco',
+    },
   },
   plugins: [
     {

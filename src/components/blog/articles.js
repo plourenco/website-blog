@@ -8,7 +8,7 @@ export default function Articles({ data }) {
       <h2>Articles</h2>
       {data.map(({ frontmatter: { title, author, date }, fields }) => {
         return (
-          <article className={styles.article}>
+          <article key={title} className={styles.article}>
             <Link className="muted" to={fields.slug}>
               <h5 className={styles.title}>{title}</h5>
             </Link>

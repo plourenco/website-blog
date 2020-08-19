@@ -13,12 +13,10 @@ jobs:
       run: |
         npm install
         npm run build
-    - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@3.5.9
+    - name: FTP-Deploy-Action
+      uses: SamKirkland/FTP-Deploy-Action@3.1.1
       with:
-        GIT_CONFIG_NAME: ${{ secrets.GIT_CONFIG_NAME }}
-        GIT_CONFIG_EMAIL: ${{ secrets.GIT_CONFIG_EMAIL }}
-        CLEAN: true
-        BRANCH: gh-pages
-        FOLDER: public
-        SILENT: true
+        ftp-server: ftp://${{ secrets.FTP_HOSTNAME }}/
+        ftp-username: ${{ secrets.FTP_USERNAME }}
+        ftp-password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: public/
