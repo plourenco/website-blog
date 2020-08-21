@@ -6,7 +6,7 @@ module.exports = {
     description: 'Personal website and blog by Pedro Lourenço.',
     author: 'Pedro Lourenço',
     url: 'https://plourenco.com',
-    keywords: 'test',
+    keywords: 'software, engineer, java, javascript, react, pedro, lourenco',
     social: {
       twitter: '@pedroglourenco',
     },

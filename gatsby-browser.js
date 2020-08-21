@@ -1,5 +1,5 @@
 import 'static/fonts.css'
-import 'static/vars.css'
+import 'static/theme.css'
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 

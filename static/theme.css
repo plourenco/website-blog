@@ -2,17 +2,17 @@ body {
   --body-font: 'Inter', sans-serif;
   --header-font: 'Metropolis', sans-serif;
   --serif-font: 'Lora', sans-serif;
-  --text-color: #f7f9fd;
-  --secondary-text-color: #999999;
+  --text-color: #233044;
+  --secondary-text-color: #777c9b;
   --hover-text-color: #30475e;
-  --background-color: #0c2233;
   --primary-color: #448ef6;
   --warning-color: #fdb44b;
   --danger-color: #de6161;
+  --background-color: white;
 }
 
-body.light {
-  --text-color: #233044;
-  --secondary-text-color: #777c9b;
-  --background-color: white;
+body.dark {
+  --text-color: #f7f9fd;
+  --secondary-text-color: #999999;
+  --background-color: #0c2233;
 }

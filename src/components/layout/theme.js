@@ -1,24 +1,26 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 export const ThemeContext = React.createContext({
   isDarkMode: true,
   setDarkMode: undefined,
 })
 
-export function useDarkMode(initial) {
-  const storage = localStorage.getItem('dark')
+export function useDarkMode() {
+  const stored =
+    typeof window !== 'undefined' && window.localStorage.getItem('prefers-dark')
   const [isDarkMode, setDarkMode] = useState(
-    storage === undefined ? initial : storage === 'true'
+    stored == null || stored === 'true'
   )
 
-  useEffect(() => {
-    localStorage.setItem('dark', JSON.stringify(isDarkMode))
-    if (isDarkMode) {
-      document.body.classList.remove('light')
-      return
+  const _setDarkMode = _isDarkMode => {
+    localStorage.setItem('prefers-dark', JSON.stringify(_isDarkMode))
+    if (_isDarkMode) {
+      document.body.classList.add('dark')
+    } else {
+      document.body.classList.remove('dark')
     }
-    document.body.className = 'light'
-  }, [isDarkMode])
+    setDarkMode(_isDarkMode)
+  }
 
-  return [isDarkMode, setDarkMode]
+  return [isDarkMode, _setDarkMode]
 }
