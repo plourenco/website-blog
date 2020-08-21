@@ -11,14 +11,24 @@ export default function Header() {
   const { isDarkMode, setDarkMode } = useContext(ThemeContext)
 
   return (
-    <Navbar expand="lg" className={styles.navbar}>
+    <Navbar
+      expand="lg"
+      className={styles.navbar}
+      variant={isDarkMode ? 'dark' : 'light'}>
       <Container>
         <Navbar.Brand>
           <Link to="/" className={styles.brand}>
             <h1>PL</h1>
           </Link>
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <div className={styles.right}>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <FontAwesomeIcon
+            icon={isDarkMode ? faMoon : faAdjust}
+            onClick={() => setDarkMode(!isDarkMode)}
+            className={styles.theme}
+          />
+        </div>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className={styles.nav}>
             <Nav.Link as={Link} to="/">
@@ -32,11 +42,6 @@ export default function Header() {
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
-        <FontAwesomeIcon
-          icon={isDarkMode ? faMoon : faAdjust}
-          onClick={() => setDarkMode(!isDarkMode)}
-          className={styles.theme}
-        />
       </Container>
     </Navbar>
   )

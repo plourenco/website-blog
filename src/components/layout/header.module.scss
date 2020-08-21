@@ -22,7 +22,7 @@
     transition: all 1s;
 
     &:hover {
-      color: var(--text-color);
+      color: var(--hover-text-color);
     }
 
     @media (max-width: $screen-lg) {
@@ -41,7 +41,7 @@
     transition: all 0.5s;
 
     &:hover {
-      color: var(--text-color);
+      color: var(--text-color) !important;
     }
   }
 
@@ -54,4 +54,11 @@
   margin-left: 2rem;
   cursor: pointer;
   user-select: none;
+  transition: all 0.5s linear;
+}
+
+.right {
+  @media (min-width: $screen-lg) {
+    order: 2;
+  }
 }

@@ -9,7 +9,7 @@ export default function About() {
         <a href="https://home.cern" target="_blank" className="highlight">
           CERN
         </a>
-        , based in <span className="highlight red">Switzerland</span> 🇨🇭,
+        , based in <span className="highlight danger">Switzerland</span> 🇨🇭,
         passionate about new technologies and challenges, with a special focus
         in software architecture, cloud computing, data visualization and live
         software development (also known as hot swapping).

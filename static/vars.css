@@ -2,8 +2,9 @@ body {
   --body-font: 'Inter', sans-serif;
   --header-font: 'Metropolis', sans-serif;
   --serif-font: 'Lora', sans-serif;
-  --text-color: #d6dff7;
-   --secondary-text-color: #999999;
+  --text-color: #f7f9fd;
+  --secondary-text-color: #999999;
+  --hover-text-color: #30475e;
   --background-color: #0c2233;
   --primary-color: #448ef6;
   --warning-color: #fdb44b;

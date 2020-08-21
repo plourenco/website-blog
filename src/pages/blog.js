@@ -24,6 +24,7 @@ export const query = graphql`
           title
           date(formatString: "MMM DD, YYYY")
           author
+          category
         }
         fields {
           slug

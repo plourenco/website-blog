@@ -3,8 +3,6 @@ import Articles from 'components/blog/articles'
 import Heading from 'components/index/heading'
 import Layout from 'components/layout'
 import { graphql } from 'gatsby'
-import Col from 'react-bootstrap/Col'
-import Row from 'react-bootstrap/Row'
 
 export default function HomePage({ data }) {
   return (
@@ -24,11 +22,11 @@ export const query = graphql`
     ) {
       nodes {
         id
-        excerpt(pruneLength: 250)
         frontmatter {
           title
           date(formatString: "MMM DD, YYYY")
           author
+          category
         }
         fields {
           slug
