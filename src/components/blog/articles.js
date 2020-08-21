@@ -6,7 +6,7 @@ export default function Articles({ data }) {
   return (
     <section>
       <h2>Articles</h2>
-      {data.map(({ frontmatter: { title, author, date }, fields }) => {
+      {data.map(({ frontmatter: { title, author, date }, excerpt, fields }) => {
         return (
           <article key={title} className={styles.article}>
             <Link className="muted" to={fields.slug}>

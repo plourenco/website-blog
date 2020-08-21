@@ -3,7 +3,6 @@ import { useEffect } from 'react'
 export default function Helmet({ children }) {
   useEffect(() => {
     const meta = Array.isArray(children) ? children : [children]
-    console.log(meta)
     for (const { type, props } of meta) {
       const elem = document.createElement(type)
       const { children, ...attrs } = props

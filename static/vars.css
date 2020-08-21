@@ -1,7 +1,17 @@
-:root {
+body {
   --body-font: 'Inter', sans-serif;
   --header-font: 'Metropolis', sans-serif;
   --serif-font: 'Lora', sans-serif;
+  --text-color: #d6dff7;
+   --secondary-text-color: #999999;
+  --background-color: #0c2233;
+  --primary-color: #448ef6;
+  --warning-color: #fdb44b;
+  --danger-color: #de6161;
+}
+
+body.light {
   --text-color: #233044;
-  --secondary-text-color: #777C9B;
+  --secondary-text-color: #777c9b;
+  --background-color: white;
 }

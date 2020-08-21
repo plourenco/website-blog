@@ -14,7 +14,7 @@ const components = {
 
 export default function Blog({ data }) {
   const {
-    frontmatter: { title, date, tags },
+    frontmatter: { title, date, category, tags },
     body,
     fields: { readingTime },
   } = data.mdx
@@ -23,9 +23,9 @@ export default function Blog({ data }) {
       <article className="blog">
         <header className="mb-5">
           <h1>{title}</h1>
-          <p className="small mt-3">
-            {date}, {readingTime} min read
-          </p>
+          <small className="">
+            {category} — {date}, {readingTime} min read
+          </small>
         </header>
         <div className="body">
           <MDXProvider components={components}>
@@ -64,6 +64,7 @@ export const query = graphql`
       frontmatter {
         title
         date(formatString: "MMM DD, YYYY")
+        category
         tags
       }
       fields {

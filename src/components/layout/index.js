@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import appleIcon114 from 'assets/icons/apple-touch-icon-114x114.png'
 import appleIcon120 from 'assets/icons/apple-touch-icon-120x120.png'
 import appleIcon144 from 'assets/icons/apple-touch-icon-144x144.png'
@@ -18,10 +18,12 @@ import Container from 'react-bootstrap/Container'
 import Footer from './footer'
 import Header from './header'
 import Helmet from './helmet'
+import { ThemeContext, useThemeEffect } from './theme'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.scss'
 
 export default function Layout({ children }) {
+  const [isDarkMode, setDarkMode] = useState(true)
   const {
     site: { siteMetadata: meta },
   } = useStaticQuery(graphql`
@@ -39,9 +41,10 @@ export default function Layout({ children }) {
       }
     }
   `)
+  useThemeEffect(isDarkMode)
 
   return (
-    <div className="">
+    <ThemeContext.Provider value={{ isDarkMode, setDarkMode }}>
       <Helmet>
         <title lang="en">{meta.title}</title>
         <meta name="description" content={meta.description} />
@@ -79,6 +82,6 @@ export default function Layout({ children }) {
       <Header />
       <Container>{children}</Container>
       <Footer />
-    </div>
+    </ThemeContext.Provider>
   )
 }

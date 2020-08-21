@@ -8,6 +8,10 @@
   @media (max-width: $screen-lg) {
     font-size: 1rem;
   }
+
+  &:hover {
+    color: var(--primary-color);
+  }
 }
 
 .article {

@@ -1,6 +1,6 @@
 ---
 title: 🤯 The Proto and the Prototype
-category: blog
+category: Javascript
 date: 2020-08-05
 author: Pedro Lourenço
 published: true
@@ -123,7 +123,7 @@ Now for the real challenge, we're tackling `Son`'s inheritance.
 - First, we need to ensure each object of `Son` will contain the `print` method.
   This means `Son`'s prototype is similar to `Parent`.
 
-```javascript
+```javascript {5}
 function Son() {
   this.name = 'son'
 }
@@ -142,7 +142,7 @@ Son.__proto__ = Parent
   with `Son`'s instance. This is the exact purpose of
   [`call`](https://developer.mozilla.org/pt-PT/docs/Web/JavaScript/Reference/Global_Objects/Function/Call).
 
-```javascript
+```javascript {2}
 function Son() {
   Parent.call(this) // inherit the name
   this.name = 'son'

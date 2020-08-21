@@ -37,7 +37,7 @@
   a {
     font-size: 0.9rem;
     font-weight: 400;
-    color: var(--secondary-text-color);
+    color: var(--secondary-text-color) !important;
     transition: all 0.5s;
 
     &:hover {
@@ -48,4 +48,10 @@
   @media (max-width: $screen-lg) {
     text-align: center;
   }
+}
+
+.theme {
+  margin-left: 2rem;
+  cursor: pointer;
+  user-select: none;
 }
