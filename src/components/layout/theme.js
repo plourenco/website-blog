@@ -1,16 +1,18 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 export const ThemeContext = React.createContext({
   isDarkMode: true,
   setDarkMode: undefined,
 })
 
-export function useDarkMode() {
-  const stored =
-    typeof window !== 'undefined' && window.localStorage.getItem('prefers-dark')
-  const [isDarkMode, setDarkMode] = useState(
-    stored == null || stored === 'true'
-  )
+export function useTheme() {
+  const [isDarkMode, setDarkMode] = useState(null)
+
+  useEffect(() => {
+    // SSR friendly approach to load localStorage
+    const stored = localStorage.getItem('prefers-dark')
+    setDarkMode(stored == null || stored === 'true')
+  }, [])
 
   const _setDarkMode = _isDarkMode => {
     localStorage.setItem('prefers-dark', JSON.stringify(_isDarkMode))

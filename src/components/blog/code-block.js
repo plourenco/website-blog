@@ -2,29 +2,26 @@ import React from 'react'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import nightOwl from 'prism-react-renderer/themes/nightOwl'
 
-const RE = /{([\d,-]+)}/
+const rangeRegex = /{((\d|\d-\d)(?:,(\d|\d-\d))*)}/
 
-const calculateLinesToHighlight = meta => {
-  if (!RE.test(meta)) {
+const linesToHighlight = meta => {
+  const match = rangeRegex.exec(meta)
+  if (!match) {
     return () => false
-  } else {
-    const lineNumbers = RE.exec(meta)[1]
-      .split(',')
-      .map(v => v.split('-').map(v => parseInt(v, 10)))
-    return index => {
-      const lineNumber = index + 1
-      const inRange = lineNumbers.some(([start, end]) =>
-        end ? lineNumber >= start && lineNumber <= end : lineNumber === start
-      )
-      return inRange
-    }
   }
+  const lines = match[1]
+    .split(',')
+    .map(n => n.split('-').map(n => parseInt(n, 10) - 1))
+
+  return index =>
+    lines.some(([start, end]) =>
+      end ? index + 1 >= start && index <= end : index === start
+    )
 }
 
 export default function CodeBlock({ children, className, metastring }) {
   const language = className.replace(/language-/, '') || ''
-  const shouldHighlightLine = calculateLinesToHighlight(metastring)
-  console.log(metastring, shouldHighlightLine)
+  const highlight = linesToHighlight(metastring)
 
   return (
     <Highlight
@@ -43,7 +40,7 @@ export default function CodeBlock({ children, className, metastring }) {
             if (line.length === 1 && line[0].content === '') {
               line[0].content = ' '
             }
-            if (shouldHighlightLine(index)) {
+            if (highlight(index)) {
               lineProps.className = `${lineProps.className} highlight-line`
             }
             return (

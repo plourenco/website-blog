@@ -18,12 +18,12 @@ import Container from 'react-bootstrap/Container'
 import Footer from './footer'
 import Header from './header'
 import Helmet from './helmet'
-import { ThemeContext, useDarkMode } from './theme'
+import { ThemeContext, useTheme } from './theme'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.scss'
 
 export default function Layout({ children }) {
-  const [isDarkMode, setDarkMode] = useDarkMode(true)
+  const [isDarkMode, setDarkMode] = useTheme()
   const {
     site: { siteMetadata: meta },
   } = useStaticQuery(graphql`

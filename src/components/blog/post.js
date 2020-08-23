@@ -12,12 +12,16 @@ const components = {
   code: CodeBlock,
 }
 
-export default function Blog({ data }) {
+export default function Blog({ data, pageContext }) {
   const {
     frontmatter: { title, date, category, tags },
     body,
     fields: { readingTime },
   } = data.mdx
+  const { slug } = pageContext
+  const twitterUrl = `https://www.twitter.com/search?q=${encodeURIComponent(
+    `https://plourenco.com${slug}`
+  )}`
   return (
     <Layout>
       <article className="blog">
@@ -42,7 +46,7 @@ export default function Blog({ data }) {
           <h4>👋 Hey, did you find this content useful?</h4>
           <p>
             Let me know on{' '}
-            <a target="_blank" href="https://www.twitter.com/pedroglourenco">
+            <a target="_blank" href={twitterUrl}>
               Twitter
             </a>{' '}
             or edit this page on{' '}

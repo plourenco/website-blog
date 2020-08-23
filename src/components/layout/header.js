@@ -27,6 +27,7 @@ export default function Header() {
             icon={isDarkMode ? faMoon : faAdjust}
             onClick={() => setDarkMode(!isDarkMode)}
             className={styles.theme}
+            style={{ visibility: isDarkMode === null ? 'hidden' : 'unset' }}
           />
         </div>
         <Navbar.Collapse id="responsive-navbar-nav">
