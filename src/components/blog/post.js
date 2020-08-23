@@ -19,7 +19,7 @@ export default function Blog({ data, pageContext }) {
     fields: { readingTime },
   } = data.mdx
   const { slug } = pageContext
-  const twitterUrl = `https://www.twitter.com/search?q=${encodeURIComponent(
+  const twitterUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
     `https://plourenco.com${slug}`
   )}`
   return (
