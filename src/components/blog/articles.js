@@ -17,7 +17,7 @@ export default function Articles({ data }) {
             <article key={title} className={styles.article}>
               <Link className="muted" to={fields.slug}>
                 <h5 className={styles.title}>{title}</h5>
-                <Badge className="ml-3" variant="secondary">
+                <Badge className="ml-lg-3 mb-lg-0 mb-3" variant="secondary">
                   {category}
                 </Badge>
               </Link>
@@ -28,7 +28,9 @@ export default function Articles({ data }) {
               {excerpt && (
                 <>
                   <p className={styles.excerpt}>{excerpt}</p>
-                  <p className="font-weight-bold">Read more</p>
+                  <Link className="muted font-weight-bold" to={fields.slug}>
+                    Read more
+                  </Link>
                 </>
               )}
             </article>
