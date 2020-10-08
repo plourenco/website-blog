@@ -4,14 +4,18 @@ category: Aws
 date: 2019-11-23
 author: Pedro Lourenço
 published: true
-tags: ["cloud computing", "walkthrough"]
+tags: ['cloud computing', 'walkthrough']
 ---
 
-AWS offers a world of cloud services that give us the ability to move our
-workflow into a third-party physically managed infrastructure. In this article,
-I intend to show how we can adapt and automate the simple use case of continuous
-deploying a serverless application, such as a REST API with NodeJS,
+
+Amazon Web Services offers a world of cloud services that give us the ability to
+move our workflow into a third-party physically managed infrastructure. In this
+article, I intend to show how we can adapt and automate the simple use case of
+continuous deploying a serverless application, such as a REST API with NodeJS,
 **exclusively using AWS services**.
+
+> This article has also been published in
+> [Medium](https://medium.com/@plourenco/using-codepipeline-to-automate-serverless-applications-deployment-b23e01b15bd1).
 
 ![](banner.png)
 
@@ -168,11 +172,11 @@ Guess what? This file also **needs to be checked in**.
 Finally, after creating each stage individually, we have all the dependencies
 required to start creating a new pipeline.
 
-![](step-6.png "Pipeline — Setup the name and respective service role")
+![](step-6.png 'Pipeline — Setup the name and respective service role')
 
-![](step-7.png "Pipeline — Define the source repository")
+![](step-7.png 'Pipeline — Define the source repository')
 
-![](step-8.png "Pipeline — Describe the build step using CodeBuild from previous stage 2.")
+![](step-8.png 'Pipeline — Describe the build step using CodeBuild from previous stage 2.')
 
 ---
 
@@ -221,9 +225,9 @@ After about 6 months, when I’m finishing this story, we’re no longer using
 CodePipeline. But, surprisingly, the reason we transitioned wasn’t because it
 was different or complex, it was because we needed to do cross-account
 deployments into different regions. AWS allows you to do deployments to a
-different account using this service, but, **in the same region**.
-Consequently, this was the time we realized that external operations would do
-deployments anywhere without any limitation.
+different account using this service, but, **in the same region**. Consequently,
+this was the time we realized that external operations would do deployments
+anywhere without any limitation.
 
 We hope that this story serves as a guide for future companies or individuals
 considering to have their operations AWS-based. In my personal opinion, I would

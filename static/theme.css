@@ -9,10 +9,12 @@ body {
   --warning-color: #fdb44b;
   --danger-color: #de6161;
   --background-color: white;
+  --muted-color: #fafafa;
 }
 
 body.dark {
   --text-color: #f7f9fd;
   --secondary-text-color: #999999;
   --background-color: #0c2233;
+  --muted-color: #081723;
 }

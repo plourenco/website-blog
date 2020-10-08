@@ -19,6 +19,12 @@
 
 @font-face {
   font-family: 'Lora';
+  src: url('fonts/Lora-Medium.ttf') format('truetype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Lora';
   src: url('fonts/Lora-SemiBold.ttf') format('truetype');
   font-weight: 600;
 }

@@ -46,6 +46,7 @@ module.exports = {
               username: 'plourenco',
             },
           },
+          'gatsby-remark-slug',
         ],
       },
     },

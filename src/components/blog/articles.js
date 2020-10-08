@@ -28,7 +28,7 @@ export default function Articles({ data }) {
               {excerpt && (
                 <>
                   <p className={styles.excerpt}>{excerpt}</p>
-                  <Link className="muted font-weight-bold" to={fields.slug}>
+                  <Link className="muted" to={fields.slug}>
                     Read more
                   </Link>
                 </>

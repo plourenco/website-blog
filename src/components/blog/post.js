@@ -1,15 +1,32 @@
 import React from 'react'
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { MDXProvider } from '@mdx-js/react'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Badge from 'react-bootstrap/Badge'
 import Layout from '../layout'
+import Anchor from './anchor'
 import CodeBlock from './code-block'
+import Note from './note'
 import './post.scss'
 
 const components = {
+  h2: Anchor('h2'),
+  h3: Anchor('h3'),
+  h4: Anchor('h4'),
   pre: props => <div className="code-highlight" {...props} />,
   code: CodeBlock,
+  u: props => <span className="highlight" {...props} />,
+  'ul.li': props => {
+    return (
+      <li {...props}>
+        <FontAwesomeIcon icon={faAngleRight} />
+        <span>{props.children}</span>
+      </li>
+    )
+  },
+  Note,
 }
 
 export default function Blog({ data, pageContext }) {
