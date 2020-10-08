@@ -26,6 +26,10 @@
   }
 }
 
+.blog .body {
+  margin-bottom: 2rem;
+}
+
 .blog .body > p:first-child:first-letter {
   float: left;
   font-size: 6rem;
@@ -78,6 +82,7 @@ ol {
 .blog ul {
   li {
     list-style: none;
+    margin-left: 0.8em;
   }
 
   li span {

@@ -9,15 +9,15 @@ import Layout from '../layout'
 import Anchor from './anchor'
 import CodeBlock from './code-block'
 import Note from './note'
-import './post.scss'
+import styles from './post.module.scss'
 
 const components = {
   h2: Anchor('h2'),
   h3: Anchor('h3'),
   h4: Anchor('h4'),
-  pre: props => <div className="code-highlight" {...props} />,
+  pre: props => <div className={styles.codeHighlight} {...props} />,
   code: CodeBlock,
-  u: props => <span className="highlight" {...props} />,
+  u: props => <span className={styles.highlight} {...props} />,
   'ul.li': props => {
     return (
       <li {...props}>
@@ -41,21 +41,21 @@ export default function Blog({ data, pageContext }) {
   )}`
   return (
     <Layout>
-      <article className="blog">
+      <article className={styles.blog}>
         <header className="mb-5">
           <h1>{title}</h1>
           <small className="">
             {category} — {date}, {readingTime} min read
           </small>
         </header>
-        <div className="body">
+        <div className={styles.body}>
           <MDXProvider components={components}>
             <MDXRenderer>{body}</MDXRenderer>
           </MDXProvider>
         </div>
         {tags &&
           tags.map(tag => (
-            <Badge key={tag} variant="secondary" className="tag">
+            <Badge key={tag} variant="secondary" className={styles.tag}>
               {tag}
             </Badge>
           ))}
