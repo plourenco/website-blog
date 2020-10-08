@@ -164,3 +164,9 @@ ol {
   height: 2px;
   margin: 4rem 0;
 }
+
+.blog .full-width {
+  position: relative;
+  width: 100vw;
+  margin-left: calc((100% - 100vw) / 2);
+}
