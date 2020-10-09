@@ -2,7 +2,7 @@ import React from 'react'
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { MDXProvider } from '@mdx-js/react'
-import { graphql } from 'gatsby'
+import { graphql, Link as GatsbyLink } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Badge from 'react-bootstrap/Badge'
 import Layout from '../layout'
@@ -18,14 +18,8 @@ const components = {
   pre: props => <div className={styles.codeHighlight} {...props} />,
   code: CodeBlock,
   u: props => <span className={styles.highlight} {...props} />,
-  'ul.li': props => {
-    return (
-      <li {...props}>
-        <FontAwesomeIcon icon={faAngleRight} />
-        <span>{props.children}</span>
-      </li>
-    )
-  },
+  a: Link,
+  'ul.li': List,
   Note,
 }
 
@@ -94,3 +88,27 @@ export const query = graphql`
     }
   }
 `
+
+function Link({ children, href }) {
+  if (href.startsWith('/')) {
+    return <GatsbyLink to={href}>{children}</GatsbyLink>
+  }
+  const onPage = href.startsWith('#')
+  return (
+    <a
+      href={href}
+      target={onPage ? null : '_blank'}
+      rel={onPage ? null : 'noopener noreferrer'}>
+      {children}
+    </a>
+  )
+}
+
+function List({ children, ...rest }) {
+  return (
+    <li {...rest}>
+      <FontAwesomeIcon icon={faAngleRight} />
+      <span>{children}</span>
+    </li>
+  )
+}
