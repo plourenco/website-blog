@@ -13,7 +13,7 @@ tags: ['concurrency', 'compilers', 'cpu']
 There are two important concepts to achieve in a multi-threading environment:
 **Visibility** and **Atomicity**.
 
-The `volatile` keyword ensure that updates to a variable are propagated
+The `volatile` keyword ensures that updates to a variable are propagated
 predictably to other threads.[^2] Prevents the compiler from re-ordering
 instructions (derived from, such as, optimisations) **and** its variable from
 being cached in registers hidden from other threads. `Volatile` targets
@@ -23,9 +23,59 @@ thread</u>.
 If you find the inner depths of compilers and concurrency as fascinating as I
 do, this definition just isn't enough.
 
-You might have previously read: _a `volatile` variable is read from the
-computer's main memory_, and adding to the fact that it is no longer cached in
-registers, are we stumbling upon a clash between performance and concurrency?
+## The need by example
+
+Let's assume, in the example below, the two methods `A` and `B` were run by two
+different threads.
+
+```java {7-8}
+/* Adapted from "C# 4 in a Nutshell", Joseph Albahari, Ben Albahari */
+class Foo {
+    int answer;
+    volatile boolean complete;
+
+    public void A() {
+        answer = 123;
+        complete = true;
+    }
+
+    public void B() {
+        if (complete) {
+            System.out.println(answer);
+        }
+    }
+
+    public static void main(String[] args) throws InterruptedException {
+        Foo t = new Foo();
+        new Thread(t::B).start();
+        TimeUnit.MILLISECONDS.sleep(100);
+        new Thread(t::A).start();
+    }
+}
+```
+
+Using `volatile` for the boolean value `complete`, will ensure a
+**happens-before** relationship where reads/writes cannot be re-ordered to occur
+after a write to a `volatile`, effectively creating a memory barrier.
+
+Re-orderings are a possibility underlying a weak memory model and, besides being
+useful for optimisations, they can also cause unpredictable cases such as the
+highlighted lines above becoming:
+
+```java
+_complete = true; // without volatile
+_answer = 123;
+```
+
+Potentially resulting in the program above to view `complete` as `true` and
+print `0` instead of the expected `123` right before its assignment. Or, equally
+targeting visibility, by creating an infinite loop as the thread running `B` did
+not commit any of the writes - there is no _freshness_ guarantee. 
+
+Taking this in consideration, you might have previously read: _a `volatile`
+variable is read from the computer's main memory_, and adding to the fact that
+it is no longer cached in registers, are we stumbling upon a clash between
+performance and concurrency?
 
 ## Is volatile expensive?
 
@@ -85,7 +135,9 @@ consistency**, re-orderings are allowed.
 
 In addition to any further possible
 [compiler (not hardware) optimisations](https://igoro.com/archive/volatile-keyword-in-c-memory-model-explained/),
-the latter is prohibited from allocating these values in registers.
+the latter is also prohibited from allocating these values in registers, such as
+two references to the same volatile variable, where the first involves a load
+from memory, but the second tries to skip it re-using the value in the register.
 
 <Note>
 
