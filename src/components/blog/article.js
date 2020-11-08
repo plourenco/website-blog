@@ -35,24 +35,3 @@ export function Article({
     </article>
   )
 }
-
-export default function Articles({ data }) {
-  return (
-    <section>
-      <h2>Articles</h2>
-      {data.map(
-        ({
-          frontmatter: { title, author, date, category },
-          excerpt,
-          fields: { readingTime, slug },
-        }) => {
-          return (
-            <Article
-              {...{ title, author, date, category, excerpt, readingTime, slug }}
-            />
-          )
-        }
-      )}
-    </section>
-  )
-}
