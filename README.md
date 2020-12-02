@@ -12,8 +12,7 @@
 
 I find value in showcasing how I built my personal website and accept
 contributions from others. I also believe each one's brand is identified by
-their unique fingerprint, not something that can be easily reproduced. This is
-my personal brand.
+their unique fingerprint, not something that can be easily reproduced.
 
 I found inspiration among many other personal websites, I hope you can find one
 here too. However, I also spent many hours and iterations trying to find
