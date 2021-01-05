@@ -69,8 +69,9 @@ _answer = 123;
 
 Potentially resulting in the program above to view `complete` as `true` and
 print `0` instead of the expected `123` right before its assignment. Or, equally
-targeting visibility, by creating an infinite loop as the thread running `B` did
-not commit any of the writes - there is no _freshness_ guarantee. 
+targeting visibility, by never getting to print anything out as the thread
+running `B` did not commit any of the writes - there is no _freshness_
+guarantee.
 
 Taking this in consideration, you might have previously read: _a `volatile`
 variable is read from the computer's main memory_, and adding to the fact that
