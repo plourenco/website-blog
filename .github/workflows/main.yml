@@ -14,10 +14,11 @@ jobs:
         npm install
         npm run build
     - name: FTP-Deploy-Action
-      uses: SamKirkland/FTP-Deploy-Action@3.1.1
+      uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
-        ftp-server: ftp://${{ secrets.FTP_HOSTNAME }}/
-        ftp-username: ${{ secrets.FTP_USERNAME }}
-        ftp-password: ${{ secrets.FTP_PASSWORD }}
+        server: ${{ secrets.FTP_HOSTNAME }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
         local-dir: public/
-        git-ftp-args: --all
+        dangerous-clean-slate: true
+        exclude: .*
