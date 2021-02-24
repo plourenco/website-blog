@@ -1,4 +1,4 @@
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby';
 
 export function useMetadata() {
   const {
@@ -17,6 +17,6 @@ export function useMetadata() {
         }
       }
     }
-  `)
-  return meta
+  `);
+  return meta;
 }

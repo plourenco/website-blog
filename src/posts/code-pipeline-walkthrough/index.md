@@ -7,7 +7,6 @@ published: true
 tags: ['cloud computing', 'walkthrough']
 ---
 
-
 Amazon Web Services offers a world of cloud services that give us the ability to
 move our workflow into a third-party physically managed infrastructure. In this
 article, I intend to show how we can adapt and automate the simple use case of

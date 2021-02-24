@@ -1,16 +1,16 @@
-import React from 'react'
+import React from 'react';
 import {
   faLinkedin,
   faGithub,
   faTwitter,
-} from '@fortawesome/free-brands-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useSocials } from 'hooks/socials'
-import Container from 'react-bootstrap/Container'
-import styles from './footer.module.scss'
+} from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useSocials } from 'hooks/socials';
+import Container from 'react-bootstrap/Container';
+import styles from './footer.module.scss';
 
 export default function Footer() {
-  const socials = useSocials()
+  const socials = useSocials();
   return (
     <footer className={styles.footer}>
       <Container className="d-flex justify-content-between">
@@ -37,5 +37,5 @@ export default function Footer() {
         </div>
       </Container>
     </footer>
-  )
+  );
 }

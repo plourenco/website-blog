@@ -1,9 +1,9 @@
-import React from 'react'
-import FcupImg from 'assets/img/fcup.png'
-import FeupImg from 'assets/img/feup.png'
-import Col from 'react-bootstrap/Col'
-import Image from 'react-bootstrap/Image'
-import Row from 'react-bootstrap/Row'
+import React from 'react';
+import FcupImg from 'assets/img/fcup.png';
+import FeupImg from 'assets/img/feup.png';
+import Col from 'react-bootstrap/Col';
+import Image from 'react-bootstrap/Image';
+import Row from 'react-bootstrap/Row';
 
 export default function Education() {
   return (
@@ -40,5 +40,5 @@ export default function Education() {
         </Col>
       </Row>
     </section>
-  )
+  );
 }

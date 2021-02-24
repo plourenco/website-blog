@@ -1,0 +1,9 @@
+node_modules
+public
+.cache
+.github
+.gitignore
+package.json
+package-lock.json
+README
+LICENSE

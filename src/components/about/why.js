@@ -1,8 +1,8 @@
-import React from 'react'
-import { useSocials } from 'hooks/socials'
+import React from 'react';
+import { useSocials } from 'hooks/socials';
 
 export default function Why() {
-  const { twitter } = useSocials()
+  const { twitter } = useSocials();
   return (
     <section>
       <h3>The blog</h3>
@@ -28,5 +28,5 @@ export default function Why() {
         .
       </p>
     </section>
-  )
+  );
 }

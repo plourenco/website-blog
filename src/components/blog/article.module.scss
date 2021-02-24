@@ -1,4 +1,4 @@
-@import "assets/screens.scss";
+@import 'assets/screens.scss';
 
 .title {
   font-size: 1rem;
@@ -15,7 +15,9 @@
     padding-right: 0.5em;
   }
 
-  &:hover, &:focus, &:active {
+  &:hover,
+  &:focus,
+  &:active {
     color: var(--primary-color);
   }
 }

@@ -1,8 +1,8 @@
-import React from 'react'
-import Rocket from 'components/index/rocket'
-import Col from 'react-bootstrap/Col'
-import Row from 'react-bootstrap/Row'
-import styles from './heading.module.scss'
+import React from 'react';
+import Rocket from 'components/index/rocket';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import styles from './heading.module.scss';
 
 export default function Heading() {
   return (
@@ -20,5 +20,5 @@ export default function Heading() {
         <Rocket className="active" />
       </Col>
     </Row>
-  )
+  );
 }

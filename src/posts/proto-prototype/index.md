@@ -20,23 +20,23 @@ we can agree on the following:
 > `prototype` is the actual object used to build `__proto__` when a new object
 > is created (**the prototype to install when constructing**).
 
-In practice, this means all instances of a class X will have their `__proto__` built
-from X's `prototype`. 
+In practice, this means all instances of a class X will have their `__proto__`
+built from X's `prototype`.
 
 ```javascript
 function User() {
-  this.name = 'my name'
+  this.name = 'my name';
 }
 
 User.prototype.save = function () {
-  return 'save'
-}
+  return 'save';
+};
 
-let user1 = new User()
-let user2 = new User()
+let user1 = new User();
+let user2 = new User();
 
-console.log(user1.__proto__ === User.prototype) // true
-console.log(user1.save === user2.save) // true
+console.log(user1.__proto__ === User.prototype); // true
+console.log(user1.save === user2.save); // true
 ```
 
 In the previous example, `user1`'s `__proto__` will be linked to the `User`'s
@@ -47,16 +47,16 @@ On the other hand, we can also confirm that:
 
 ```javascript
 function User() {
-  this.name = 'my name'
+  this.name = 'my name';
   this.save = function () {
-    return 'save'
-  }
+    return 'save';
+  };
 }
 
-let user1 = new User()
-let user2 = new User()
+let user1 = new User();
+let user2 = new User();
 
-console.log(user1.save === user2.save) // false
+console.log(user1.save === user2.save); // false
 ```
 
 But why? Every time a new object is instantiated from `User`, a new function
@@ -72,22 +72,22 @@ example:
 ```javascript
 class Parent {
   constructor() {
-    this.name = 'parent'
+    this.name = 'parent';
   }
 
   print() {
-    return 'I am an object method'
+    return 'I am an object method';
   }
 
   static print() {
-    return 'I am a static method'
+    return 'I am a static method';
   }
 }
 
 class Son extends Parent {
   constructor() {
-    super()
-    this.name = 'son'
+    super();
+    this.name = 'son';
   }
 }
 ```
@@ -108,14 +108,14 @@ method.
 
 ```javascript
 function Parent() {
-  this.name = 'parent'
+  this.name = 'parent';
 }
 Parent.prototype.print = function () {
-  return 'I am an object method'
-}
+  return 'I am an object method';
+};
 Parent.print = function () {
-  return 'I am a static method'
-}
+  return 'I am a static method';
+};
 ```
 
 Now for the real challenge, we're tackling `Son`'s inheritance.
@@ -125,17 +125,17 @@ Now for the real challenge, we're tackling `Son`'s inheritance.
 
 ```javascript {5}
 function Son() {
-  this.name = 'son'
+  this.name = 'son';
 }
 
-Son.prototype = Object.create(Parent.prototype)
+Son.prototype = Object.create(Parent.prototype);
 ```
 
 - Then, we want to apply the static method. In other words, we can let `Son`'s
   `__proto__` refer to `Parent` in the lookup chain to its resolve fields.
 
 ```javascript
-Son.__proto__ = Parent
+Son.__proto__ = Parent;
 ```
 
 - Finally, `Parent` function will be invoked replacing the context of `this`
@@ -144,12 +144,12 @@ Son.__proto__ = Parent
 
 ```javascript {2-3}
 function Son() {
-  Parent.call(this) // inherit the name
-  this.name = 'son'
+  Parent.call(this); // inherit the name
+  this.name = 'son';
 }
-Son.prototype = Object.create(Parent.prototype) // inherit print
-Son.prototype.constructor = Son
-Son.__proto__ = Parent // inherit static print
+Son.prototype = Object.create(Parent.prototype); // inherit print
+Son.prototype.constructor = Son;
+Son.__proto__ = Parent; // inherit static print
 ```
 
 But why `Son.prototype.constructor = Son`?

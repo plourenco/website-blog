@@ -1,8 +1,8 @@
-import React from 'react'
-import { Article } from 'components/blog/article'
-import Heading from 'components/index/heading'
-import Layout from 'components/layout'
-import { graphql } from 'gatsby'
+import React from 'react';
+import { Article } from 'components/blog/article';
+import Heading from 'components/index/heading';
+import Layout from 'components/layout';
+import { graphql } from 'gatsby';
 
 export default function HomePage({ data }) {
   return (
@@ -19,11 +19,11 @@ export default function HomePage({ data }) {
             <Article
               {...{ title, author, date, category, excerpt, readingTime, slug }}
             />
-          )
+          );
         }
       )}
     </Layout>
-  )
+  );
 }
 
 export const query = graphql`
@@ -48,4 +48,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

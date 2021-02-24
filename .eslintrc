@@ -6,20 +6,23 @@
     "react-hooks/exhaustive-deps": "warn",
     "prettier/prettier": "error",
     "import/no-cycle": "error",
-    "import/order": ["error", {
-      "groups": ["builtin", "external", "parent", "sibling", "index"],
-      "alphabetize": {
-        "order": "asc",
-        "caseInsensitive": true
-      },
-      "pathGroups": [
-        {
-          "pattern": "react",
-          "group": "external",
-          "position": "before"
-        }
-      ],
-      "pathGroupsExcludedImportTypes": ["builtin"]
-    }]
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "parent", "sibling", "index"],
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        },
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["builtin"]
+      }
+    ]
   }
 }

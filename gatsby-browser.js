@@ -1,7 +1,7 @@
-import 'static/fonts.css'
-import 'static/theme.css'
-import { config } from '@fortawesome/fontawesome-svg-core'
-import '@fortawesome/fontawesome-svg-core/styles.css'
+import 'static/fonts.css';
+import 'static/theme.css';
+import { config } from '@fortawesome/fontawesome-svg-core';
+import '@fortawesome/fontawesome-svg-core/styles.css';
 
 // https://github.com/FortAwesome/react-fontawesome/issues/234
-config.autoAddCss = false
+config.autoAddCss = false;

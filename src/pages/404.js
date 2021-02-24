@@ -1,7 +1,7 @@
 export default function NotFoundPage() {
   if (typeof window !== 'undefined') {
-    window.location = '/'
+    window.location = '/';
   }
 
-  return null
+  return null;
 }

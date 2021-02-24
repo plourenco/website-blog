@@ -1,15 +1,15 @@
-import React from 'react'
-import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { MDXProvider } from '@mdx-js/react'
-import { graphql, Link as GatsbyLink } from 'gatsby'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
-import Badge from 'react-bootstrap/Badge'
-import Layout from '../layout'
-import Anchor from './anchor'
-import CodeBlock from './code-block'
-import Note from './note'
-import styles from './post.module.scss'
+import React from 'react';
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { MDXProvider } from '@mdx-js/react';
+import { graphql, Link as GatsbyLink } from 'gatsby';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
+import Badge from 'react-bootstrap/Badge';
+import Layout from '../layout';
+import Anchor from './anchor';
+import CodeBlock from './code-block';
+import Note from './note';
+import styles from './post.module.scss';
 
 const components = {
   h2: Anchor('h2'),
@@ -21,18 +21,18 @@ const components = {
   a: Link,
   'ul.li': List,
   Note,
-}
+};
 
 export default function Blog({ data, pageContext }) {
   const {
     frontmatter: { title, date, category, tags },
     body,
     fields: { readingTime },
-  } = data.mdx
-  const { slug } = pageContext
+  } = data.mdx;
+  const { slug } = pageContext;
   const twitterUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
     `https://plourenco.com${slug}`
-  )}`
+  )}`;
   return (
     <Layout>
       <article className={styles.blog}>
@@ -69,7 +69,7 @@ export default function Blog({ data, pageContext }) {
         </div>
       </article>
     </Layout>
-  )
+  );
 }
 
 export const query = graphql`
@@ -87,13 +87,13 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
 function Link({ children, href }) {
   if (href.startsWith('/')) {
-    return <GatsbyLink to={href}>{children}</GatsbyLink>
+    return <GatsbyLink to={href}>{children}</GatsbyLink>;
   }
-  const onPage = href.startsWith('#')
+  const onPage = href.startsWith('#');
   return (
     <a
       href={href}
@@ -101,7 +101,7 @@ function Link({ children, href }) {
       rel={onPage ? null : 'noopener noreferrer'}>
       {children}
     </a>
-  )
+  );
 }
 
 function List({ children, ...rest }) {
@@ -110,5 +110,5 @@ function List({ children, ...rest }) {
       <FontAwesomeIcon icon={faAngleRight} />
       <span>{children}</span>
     </li>
-  )
+  );
 }

@@ -1,14 +1,14 @@
-import React, { useContext } from 'react'
-import { faMoon, faAdjust } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Link } from 'gatsby'
-import { Nav, Navbar } from 'react-bootstrap'
-import Container from 'react-bootstrap/Container'
-import styles from './header.module.scss'
-import { ThemeContext } from './theme'
+import React, { useContext } from 'react';
+import { faMoon, faAdjust } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'gatsby';
+import { Nav, Navbar } from 'react-bootstrap';
+import Container from 'react-bootstrap/Container';
+import styles from './header.module.scss';
+import { ThemeContext } from './theme';
 
 export default function Header() {
-  const { isDarkMode, setDarkMode } = useContext(ThemeContext)
+  const { isDarkMode, setDarkMode } = useContext(ThemeContext);
 
   return (
     <Navbar
@@ -45,5 +45,5 @@ export default function Header() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-  )
+  );
 }

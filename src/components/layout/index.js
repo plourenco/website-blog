@@ -1,29 +1,29 @@
-import React from 'react'
-import appleIcon114 from 'assets/icons/apple-touch-icon-114x114.png'
-import appleIcon120 from 'assets/icons/apple-touch-icon-120x120.png'
-import appleIcon144 from 'assets/icons/apple-touch-icon-144x144.png'
-import appleIcon152 from 'assets/icons/apple-touch-icon-152x152.png'
-import appleIcon180 from 'assets/icons/apple-touch-icon-180x180.png'
-import appleIcon57 from 'assets/icons/apple-touch-icon-57x57.png'
-import appleIcon60 from 'assets/icons/apple-touch-icon-60x60.png'
-import appleIcon72 from 'assets/icons/apple-touch-icon-72x72.png'
-import appleIcon76 from 'assets/icons/apple-touch-icon-76x76.png'
-import icon16 from 'assets/icons/favicon-16x16.png'
-import icon32 from 'assets/icons/favicon-32x32.png'
-import favicon from 'assets/icons/favicon.ico'
-import msTile150 from 'assets/icons/mstile-150x150.png'
-import { useMetadata } from 'hooks/metadata'
-import Container from 'react-bootstrap/Container'
-import Footer from './footer'
-import Header from './header'
-import Helmet from './helmet'
-import { ThemeContext, useTheme } from './theme'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import './index.scss'
+import React from 'react';
+import appleIcon114 from 'assets/icons/apple-touch-icon-114x114.png';
+import appleIcon120 from 'assets/icons/apple-touch-icon-120x120.png';
+import appleIcon144 from 'assets/icons/apple-touch-icon-144x144.png';
+import appleIcon152 from 'assets/icons/apple-touch-icon-152x152.png';
+import appleIcon180 from 'assets/icons/apple-touch-icon-180x180.png';
+import appleIcon57 from 'assets/icons/apple-touch-icon-57x57.png';
+import appleIcon60 from 'assets/icons/apple-touch-icon-60x60.png';
+import appleIcon72 from 'assets/icons/apple-touch-icon-72x72.png';
+import appleIcon76 from 'assets/icons/apple-touch-icon-76x76.png';
+import icon16 from 'assets/icons/favicon-16x16.png';
+import icon32 from 'assets/icons/favicon-32x32.png';
+import favicon from 'assets/icons/favicon.ico';
+import msTile150 from 'assets/icons/mstile-150x150.png';
+import { useMetadata } from 'hooks/metadata';
+import Container from 'react-bootstrap/Container';
+import Footer from './footer';
+import Header from './header';
+import Helmet from './helmet';
+import { ThemeContext, useTheme } from './theme';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.scss';
 
 export default function Layout({ children }) {
-  const [isDarkMode, setDarkMode] = useTheme()
-  const meta = useMetadata()
+  const [isDarkMode, setDarkMode] = useTheme();
+  const meta = useMetadata();
 
   return (
     <ThemeContext.Provider value={{ isDarkMode, setDarkMode }}>
@@ -63,5 +63,5 @@ export default function Layout({ children }) {
       <Container>{children}</Container>
       <Footer />
     </ThemeContext.Provider>
-  )
+  );
 }

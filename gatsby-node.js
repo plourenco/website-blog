@@ -1,9 +1,9 @@
-const path = require('path')
-const { createFilePath } = require(`gatsby-source-filesystem`)
+const path = require('path');
+const { createFilePath } = require(`gatsby-source-filesystem`);
 
 exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions
-  const blogPostTemplate = path.resolve('src/components/blog/post.js')
+  const { createPage } = actions;
+  const blogPostTemplate = path.resolve('src/components/blog/post.js');
 
   return graphql(`
     {
@@ -20,10 +20,10 @@ exports.createPages = ({ actions, graphql }) => {
     }
   `).then(result => {
     if (result.errors) {
-      throw result.errors
+      throw result.errors;
     }
 
-    const posts = result.data.allMdx.nodes
+    const posts = result.data.allMdx.nodes;
 
     // create page for each mdx file
     posts.forEach(post => {
@@ -33,25 +33,25 @@ exports.createPages = ({ actions, graphql }) => {
         context: {
           slug: post.fields.slug,
         },
-      })
-    })
-  })
-}
+      });
+    });
+  });
+};
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
+  const { createNodeField } = actions;
   if (node.internal.type === `Mdx`) {
-    const value = createFilePath({ node, getNode })
+    const value = createFilePath({ node, getNode });
     createNodeField({
       name: `slug`,
       node,
       value,
-    })
-    let words = node.rawBody.split(' ').length
+    });
+    let words = node.rawBody.split(' ').length;
     createNodeField({
       node,
       name: `readingTime`,
       value: Math.ceil(words / 200),
-    })
+    });
   }
-}
+};

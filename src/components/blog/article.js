@@ -1,7 +1,7 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import Badge from 'react-bootstrap/Badge'
-import styles from './article.module.scss'
+import React from 'react';
+import { Link } from 'gatsby';
+import Badge from 'react-bootstrap/Badge';
+import styles from './article.module.scss';
 
 export function Article({
   title,
@@ -33,5 +33,5 @@ export function Article({
         </>
       )}
     </article>
-  )
+  );
 }

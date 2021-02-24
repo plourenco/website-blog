@@ -1,4 +1,4 @@
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby';
 
 export function useSocials() {
   const {
@@ -17,6 +17,6 @@ export function useSocials() {
         }
       }
     }
-  `)
-  return social
+  `);
+  return social;
 }

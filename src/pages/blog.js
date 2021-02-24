@@ -1,7 +1,7 @@
-import React from 'react'
-import { Article } from 'components/blog/article'
-import Layout from 'components/layout'
-import { graphql } from 'gatsby'
+import React from 'react';
+import { Article } from 'components/blog/article';
+import Layout from 'components/layout';
+import { graphql } from 'gatsby';
 
 export default function BlogPage({ data }) {
   return (
@@ -17,11 +17,11 @@ export default function BlogPage({ data }) {
             <Article
               {...{ title, author, date, category, excerpt, readingTime, slug }}
             />
-          )
+          );
         }
       )}
     </Layout>
-  )
+  );
 }
 
 export const query = graphql`
@@ -46,4 +46,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

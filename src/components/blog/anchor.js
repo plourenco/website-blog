@@ -1,11 +1,11 @@
-import React from 'react'
-import { faLink } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import styles from './anchor.module.scss'
+import React from 'react';
+import { faLink } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import styles from './anchor.module.scss';
 
 export default function Anchor(Tag) {
   return props => {
-    if (!props.id) return <Tag {...props} />
+    if (!props.id) return <Tag {...props} />;
 
     return (
       <Tag {...props} className={styles.heading}>
@@ -14,6 +14,6 @@ export default function Anchor(Tag) {
         </a>
         {props.children}
       </Tag>
-    )
-  }
+    );
+  };
 }

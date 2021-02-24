@@ -1,4 +1,4 @@
-import { createElement } from 'react'
+import { createElement } from 'react';
 
 const applyDarkModeClass = `
 (function () {
@@ -10,13 +10,13 @@ const applyDarkModeClass = `
     }
   } catch (e) {}
 })();
-`
+`;
 
 export const onRenderBody = ({ setPreBodyComponents }) => {
   const script = createElement('script', {
     dangerouslySetInnerHTML: {
       __html: applyDarkModeClass,
     },
-  })
-  setPreBodyComponents([script])
-}
+  });
+  setPreBodyComponents([script]);
+};

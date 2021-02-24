@@ -1,5 +1,5 @@
-import React from 'react'
-import './rocket.scss'
+import React from 'react';
+import './rocket.scss';
 
 export default function Rocket({ className }) {
   return (
@@ -282,5 +282,5 @@ export default function Rocket({ className }) {
         </g>
       </g>
     </svg>
-  )
+  );
 }
