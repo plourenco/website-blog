@@ -49,7 +49,7 @@ export default function Blog({ data, pageContext }) {
         </div>
         {tags &&
           tags.map(tag => (
-            <Badge key={tag} bg="secondary" className={styles.tag}>
+            <Badge key={tag} className={styles.tag}>
               {tag}
             </Badge>
           ))}

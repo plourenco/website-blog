@@ -16,7 +16,7 @@ export function Article({
     <article key={title} className={styles.article}>
       <Link className="muted" to={slug}>
         <h5 className={styles.title}>{title}</h5>
-        <Badge className="ml-lg-3 mb-lg-0 mb-2" bg="secondary">
+        <Badge className="ml-lg-3 mb-lg-0 mb-2">
           {category}
         </Badge>
       </Link>
