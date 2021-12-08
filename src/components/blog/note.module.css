@@ -8,10 +8,10 @@
   border-radius: 4px;
   border-left: 8px solid var(--primary-color);
   overflow: hidden;
+}
 
-  svg {
-    font-size: 30px;
-  }
+.alert svg {
+  font-size: 30px;
 }
 
 .text {
@@ -36,6 +36,6 @@
 
 .success {
   composes: alert;
-  border-left: 8px solid var(--warning-color);
+  border-left: 8px solid var(--success-color);
   color: var(--success-color);
 }

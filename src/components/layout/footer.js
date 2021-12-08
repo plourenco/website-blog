@@ -7,7 +7,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useSocials } from 'hooks/socials';
 import Container from 'react-bootstrap/Container';
-import styles from './footer.module.scss';
+import * as styles from './footer.module.css';
 
 export default function Footer() {
   const socials = useSocials();

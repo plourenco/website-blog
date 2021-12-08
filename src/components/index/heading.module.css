@@ -1,12 +1,8 @@
-@import 'assets/screens.scss';
+@import '../../assets/screens.css';
 
 .cover {
   margin-top: 2rem;
   margin-bottom: 7rem;
-
-  @media (max-width: $screen-lg) {
-    margin-bottom: 5rem;
-  }
 }
 
 .title {
@@ -15,10 +11,6 @@
   font-size: 4rem;
   line-height: 1.45em;
   animation: slideIn 0.5s ease-out;
-
-  @media (max-width: $screen-lg) {
-    font-size: calc(1.525rem + 3.3vw);
-  }
 }
 
 .sub {
@@ -26,8 +18,18 @@
   font-size: 2rem;
   line-height: 1.45em;
   animation: slideIn 0.5s ease-out;
+}
 
-  @media (max-width: $screen-lg) {
+@media (max-width: 1200px) {
+  .cover {
+    margin-bottom: 5rem;
+  }
+
+  .title {
+    font-size: calc(1.525rem + 3.3vw);
+  }
+
+  .sub {
     font-size: calc(1.325rem + 0.9vw);
   }
 }

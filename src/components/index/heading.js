@@ -2,7 +2,7 @@ import React from 'react';
 import Rocket from 'components/index/rocket';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import styles from './heading.module.scss';
+import * as styles from './heading.module.css';
 
 export default function Heading() {
   return (

@@ -1,0 +1,66 @@
+@import '../../assets/screens.css';
+
+.navbar {
+  margin-bottom: 5rem;
+}
+
+.brand {
+  color: unset;
+}
+
+.brand h1 {
+  font-family: var(--header-font);
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  color: #ccced7;
+  text-transform: uppercase;
+  margin: 0;
+  transition: all 1s;
+}
+
+.brand h1:hover {
+  color: var(--hover-text-color);
+}
+
+.nav {
+  margin-left: auto;
+}
+
+.nav a {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--secondary-text-color) !important;
+  transition: all 0.5s;
+}
+
+.nav a:hover {
+  color: var(--text-color) !important;
+}
+
+.theme {
+  margin-left: 2rem;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.5s linear;
+}
+
+@media (min-width: 1200px) {
+  .right {
+    order: 2;
+  }
+}
+
+@media (max-width: 1200px) {
+  .navbar {
+    margin-bottom: 3rem;
+  }
+
+  .brand h1 {
+    font-size: calc(1.345rem + 1.14vw);
+  }
+
+  .nav {
+    text-align: center;
+  }
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import Badge from 'react-bootstrap/Badge';
-import styles from './article.module.scss';
+import * as styles from './article.module.css';
 
 export function Article({
   title,
@@ -16,7 +16,7 @@ export function Article({
     <article key={title} className={styles.article}>
       <Link className="muted" to={slug}>
         <h5 className={styles.title}>{title}</h5>
-        <Badge className="ml-lg-3 mb-lg-0 mb-2" variant="secondary">
+        <Badge className="ml-lg-3 mb-lg-0 mb-2" bg="secondary">
           {category}
         </Badge>
       </Link>

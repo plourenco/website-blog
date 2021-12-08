@@ -1,7 +1,7 @@
 import React from 'react';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import styles from './anchor.module.scss';
+import * as styles from './anchor.module.css';
 
 export default function Anchor(Tag) {
   return props => {

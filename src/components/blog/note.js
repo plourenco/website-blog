@@ -1,7 +1,7 @@
 import React from 'react';
 import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import styles from './note.module.scss';
+import * as styles from './note.module.css';
 
 export default function Note({ color, children }) {
   const _color = ['warning', 'danger', 'success'].includes(color)

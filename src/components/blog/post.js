@@ -9,7 +9,7 @@ import Layout from '../layout';
 import Anchor from './anchor';
 import CodeBlock from './code-block';
 import Note from './note';
-import styles from './post.module.scss';
+import * as styles from './post.module.css';
 
 const components = {
   h2: Anchor('h2'),
@@ -49,7 +49,7 @@ export default function Blog({ data, pageContext }) {
         </div>
         {tags &&
           tags.map(tag => (
-            <Badge key={tag} variant="secondary" className={styles.tag}>
+            <Badge key={tag} bg="secondary" className={styles.tag}>
               {tag}
             </Badge>
           ))}

@@ -1,5 +1,5 @@
 @import url('https://github.githubassets.com/assets/gist-embed-b3b573358bfc66d89e1e95dbf8319c09.css');
-@import 'assets/screens.scss';
+@import '../../assets/screens.css';
 
 .blog {
   font-family: var(--serif-font);
@@ -11,19 +11,14 @@
 .blog p {
   line-height: 1.7;
   margin-bottom: 1.5rem;
+}
 
-  &:last-child {
-    margin-bottom: 0;
-  }
+.blog p:last-child {
+  margin-bottom: 0;
 }
 
 .blog h1 {
   font-weight: 400;
-
-  @media (max-width: $screen-lg) {
-    font-size: 2rem;
-    padding-right: 0.5rem;
-  }
 }
 
 .blog .body {
@@ -35,10 +30,6 @@
   font-size: 6rem;
   line-height: 0.65;
   margin: 0.7rem 0.7rem 0.7rem 0;
-
-  @media (max-width: $screen-lg) {
-    font-size: 4rem;
-  }
 }
 
 .blog span.gatsby-resp-image-wrapper {
@@ -47,10 +38,10 @@
 
 .blog figure {
   margin: 2.2em auto 2.2em auto;
+}
 
-  span.gatsby-resp-image-wrapper {
-    margin: 0;
-  }
+.blog figure span.gatsby-resp-image-wrapper {
+  margin: 0;
 }
 
 .blog figure figcaption {
@@ -61,13 +52,11 @@
   margin-top: 1em;
 }
 
-@for $index from 1 through 6 {
-  .blog h#{$index} {
-    line-height: 1.3;
-    margin-top: 2em;
-    margin-bottom: 0.5em;
-    font-weight: 500;
-  }
+.blog h1, .blog h2, .blog h3, .blog h4, .blog h5, .blog h6 {
+  line-height: 1.3;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+  font-weight: 500;
 }
 
 .blog h1:first-child {
@@ -79,21 +68,19 @@ ol {
   margin: 1.5rem 0;
 }
 
-.blog ul {
-  li {
-    list-style: none;
-    margin-left: 0.8em;
-  }
+.blog ul li {
+  list-style: none;
+  margin-left: 0.8em;
+}
 
-  li span {
-    display: inline-table;
-    margin-left: 1em;
-  }
+.blog ul li span {
+  display: inline-table;
+  margin-left: 1em;
+}
 
-  li svg {
-    color: white;
-    margin-left: -2.8em;
-  }
+.blog li svg {
+  color: white;
+  margin-left: -2.8em;
 }
 
 .blog blockquote {
@@ -104,25 +91,38 @@ ol {
   margin-top: 1.7em;
   margin-bottom: 1.7em;
   font-style: italic;
-
-  @media (max-width: $screen-lg) {
-    margin-left: 0;
-  }
 }
 
-@media (min-width: $screen-sm) {
+@media (min-width: 768px) {
   .blog {
     width: 300px;
   }
 }
-@media (min-width: $screen-md) {
+
+@media (min-width: 992px) {
   .blog {
     width: 500px;
   }
 }
-@media (min-width: $screen-lg) {
+
+@media (min-width: 1200px) {
   .blog {
     width: 700px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .blog h1 {
+    font-size: 2rem;
+    padding-right: 0.5rem;
+  }
+
+  .blog .body > p:first-child:first-letter {
+    font-size: 4rem;
+  }
+
+  .blog blockquote {
+    margin-left: 0;
   }
 }
 
@@ -148,14 +148,14 @@ ol {
 .blog .highlight {
   background: rgba(68, 142, 246, 0.3);
   padding: 0.1em 0.3em;
+}
 
-  &:hover {
-    background: rgba(68, 142, 246, 0.75);
-  }
+.blog .highlight:hover {
+  background: rgba(68, 142, 246, 0.75);
+}
 
-  &:after {
-    display: none;
-  }
+.blog .highlight:after {
+  display: none;
 }
 
 .blog hr {

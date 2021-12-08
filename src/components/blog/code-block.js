@@ -2,7 +2,7 @@ import React from 'react';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import Prism from 'prism-react-renderer/prism';
 import nightOwl from 'prism-react-renderer/themes/nightOwl';
-import styles from './code-block.module.scss';
+import * as styles from './code-block.module.css';
 
 // Add extra language syntax support (prism-react-renderer#53)
 (typeof global !== 'undefined' ? global : window).Prism = Prism;

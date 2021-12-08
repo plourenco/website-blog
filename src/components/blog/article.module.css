@@ -1,24 +1,24 @@
-@import 'assets/screens.scss';
+@import '../../assets/screens.css';
 
 .title {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.8rem;
   display: inline-block;
+}
 
-  @media (max-width: $screen-lg) {
+.title:first-letter {
+  padding-right: 0.5em;
+}
+
+.title:hover, .title:focus, .title:active {
+  color: var(--primary-color);
+}
+
+@media (max-width: 1200px) {
+  .title {
     font-size: 1rem;
     display: block;
-  }
-
-  &:first-letter {
-    padding-right: 0.5em;
-  }
-
-  &:hover,
-  &:focus,
-  &:active {
-    color: var(--primary-color);
   }
 }
 

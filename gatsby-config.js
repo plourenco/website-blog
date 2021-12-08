@@ -27,7 +27,6 @@ module.exports = {
         extensions: ['.css', '.js', '.jsx'],
       },
     },
-    'gatsby-plugin-sass',
     {
       resolve: `gatsby-plugin-mdx`,
       options: {

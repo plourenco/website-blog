@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'gatsby';
 import { Nav, Navbar } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
-import styles from './header.module.scss';
+import * as styles from './header.module.css';
 import { ThemeContext } from './theme';
 
 export default function Header() {

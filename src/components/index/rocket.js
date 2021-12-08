@@ -1,5 +1,5 @@
 import React from 'react';
-import './rocket.scss';
+import './rocket.css';
 
 export default function Rocket({ className }) {
   return (

@@ -19,7 +19,7 @@ import Header from './header';
 import Helmet from './helmet';
 import { ThemeContext, useTheme } from './theme';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './index.scss';
+import './index.css';
 
 export default function Layout({ children }) {
   const [isDarkMode, setDarkMode] = useTheme();

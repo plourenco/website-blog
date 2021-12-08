@@ -1,0 +1,23 @@
+@import '../../assets/screens.css';
+
+.footer {
+  font-size: 0.8rem;
+  padding: 2rem 0;
+}
+
+@media (max-width: 1200px) {
+  .footer {
+    padding: 1rem 0;
+  }
+}
+
+.icons a {
+  font-size: 1.3em;
+  margin: 0 0.5em;
+  color: #ccced7;
+  transition: all 0.5s;
+}
+
+.icons:hover {
+  color: var(--body-font);
+}
