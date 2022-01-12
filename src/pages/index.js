@@ -11,12 +11,14 @@ export default function HomePage({ data }) {
       <h3>My blog posts</h3>
       {data.getLatestArticles.nodes.map(
         ({
+          id,
           frontmatter: { title, author, date, category },
           excerpt,
           fields: { readingTime, slug },
         }) => {
           return (
             <Article
+              key={id}
               {...{ title, author, date, category, excerpt, readingTime, slug }}
             />
           );
