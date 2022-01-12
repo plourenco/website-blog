@@ -5651,17 +5651,18 @@ gatsby-cli@^4.3.0:
     yoga-layout-prebuilt "^1.10.0"
     yurnalist "^2.1.0"
 
-gatsby-core-utils@^3.3.0:
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-3.3.0.tgz#a8fb10e2341fd0e98a50ee3dd2b707bcca65fdee"
-  integrity sha512-Mr90+2T5mUie2fCkQS3dM6oHzTyt1vLbpJ2nU2OsdF95LHnLBt0kDgK+qEIuz7Ypr91gFN8y2HoP08vuokq7ZQ==
+gatsby-core-utils@^3.3.0, gatsby-core-utils@^3.5.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-3.5.0.tgz#b4b95252c3a06dd1883b13918746550d3f782035"
+  integrity sha512-hv0biKZytTJgO8mghiDF0mqlDTu8AbapcK1KU25m1NkvnossuVOU/5fyMqPUXRE9BBD5OT6wJQqHCmiSmoxDEQ==
   dependencies:
     "@babel/runtime" "^7.15.4"
     ci-info "2.0.0"
     configstore "^5.0.1"
     file-type "^16.5.3"
     fs-extra "^10.0.0"
-    got "^11.8.2"
+    got "^11.8.3"
+    lock "^1.1.0"
     node-object-hash "^2.3.10"
     proper-lockfile "^4.1.2"
     tmp "^0.2.1"
@@ -5722,9 +5723,9 @@ gatsby-plugin-google-analytics@^4.3.0:
     web-vitals "^1.1.2"
 
 gatsby-plugin-mdx@^3.3.0:
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-mdx/-/gatsby-plugin-mdx-3.3.0.tgz#18b3f5d2eab02e5bdd8264560c850473ce772039"
-  integrity sha512-4uYcNXVLnx0jgfjp3iyrGjVJr/D5gItfZxrUgVKtrsy2LhtR9gtQgLFZgGONnqDoPn+26kAlBsqTOORN3m88bQ==
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-mdx/-/gatsby-plugin-mdx-3.5.0.tgz#8501da06e817292685a79cff9455a7709ad06951"
+  integrity sha512-sajiHqh1PQE5a6CzbXBCvleqcIltq9yQVa9/cjqzynZVpFxdrI5IsTX5BH6atQI5EVLgBYH18arZ3IMhvAff5A==
   dependencies:
     "@babel/core" "^7.15.5"
     "@babel/generator" "^7.15.4"
@@ -5742,7 +5743,7 @@ gatsby-plugin-mdx@^3.3.0:
     escape-string-regexp "^1.0.5"
     eval "^0.1.4"
     fs-extra "^10.0.0"
-    gatsby-core-utils "^3.3.0"
+    gatsby-core-utils "^3.5.0"
     gray-matter "^4.0.2"
     json5 "^2.1.3"
     loader-utils "^1.4.0"
@@ -6377,7 +6378,7 @@ globby@^11.0.3, globby@^11.0.4:
     merge2 "^1.3.0"
     slash "^3.0.0"
 
-got@^11.8.2:
+got@^11.8.2, got@^11.8.3:
   version "11.8.3"
   resolved "https://registry.yarnpkg.com/got/-/got-11.8.3.tgz#f496c8fdda5d729a90b4905d2b07dbd148170770"
   integrity sha512-7gtQ5KiPh1RtGS9/Jbv1ofDpBFuq42gyfEib+ejaRBJuj/3tQFeR5+gw57e4ipaU8c/rCjvX6fkQz2lyDlGAOg==
@@ -7728,7 +7729,7 @@ locate-path@^5.0.0:
   dependencies:
     p-locate "^4.1.0"
 
-lock@^1.0.0:
+lock@^1.0.0, lock@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/lock/-/lock-1.1.0.tgz#53157499d1653b136ca66451071fca615703fa55"
   integrity sha1-UxV0mdFlOxNspmRRBx/KYVcD+lU=
