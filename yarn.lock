@@ -5723,9 +5723,9 @@ gatsby-plugin-google-analytics@^4.3.0:
     web-vitals "^1.1.2"
 
 gatsby-plugin-mdx@^3.3.0:
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-mdx/-/gatsby-plugin-mdx-3.3.0.tgz#18b3f5d2eab02e5bdd8264560c850473ce772039"
-  integrity sha512-4uYcNXVLnx0jgfjp3iyrGjVJr/D5gItfZxrUgVKtrsy2LhtR9gtQgLFZgGONnqDoPn+26kAlBsqTOORN3m88bQ==
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-mdx/-/gatsby-plugin-mdx-3.5.0.tgz#8501da06e817292685a79cff9455a7709ad06951"
+  integrity sha512-sajiHqh1PQE5a6CzbXBCvleqcIltq9yQVa9/cjqzynZVpFxdrI5IsTX5BH6atQI5EVLgBYH18arZ3IMhvAff5A==
   dependencies:
     "@babel/core" "^7.15.5"
     "@babel/generator" "^7.15.4"
@@ -5743,7 +5743,7 @@ gatsby-plugin-mdx@^3.3.0:
     escape-string-regexp "^1.0.5"
     eval "^0.1.4"
     fs-extra "^10.0.0"
-    gatsby-core-utils "^3.3.0"
+    gatsby-core-utils "^3.5.0"
     gray-matter "^4.0.2"
     json5 "^2.1.3"
     loader-utils "^1.4.0"
