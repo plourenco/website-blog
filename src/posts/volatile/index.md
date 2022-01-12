@@ -63,26 +63,26 @@ useful for optimisations, they can also cause unpredictable cases such as the
 highlighted lines above becoming:
 
 ```java
-_complete = true; // without volatile
-_answer = 123;
+complete = true; // without volatile
+answer = 123;
 ```
 
 Potentially resulting in the program above to view `complete` as `true` and
 print `0` instead of the expected `123` right before its assignment. Or, equally
 targeting visibility, by never getting to print anything out as the thread
-running `B` did not commit any of the writes - there is no _freshness_
+running `A` did not commit any of the writes - there is no _freshness_
 guarantee.
 
 Taking this in consideration, you might have previously read: _a `volatile`
 variable is read from the computer's main memory_, and adding to the fact that
-it is no longer cached in registers, are we stumbling upon a clash between
+it is no longer cached in CPU registers, are we stumbling upon a clash between
 performance and concurrency?
 
 ## Is volatile expensive?
 
 Does that actually mean every `volatile` access will be read from the main
-memory? Not exactly, this is a common misconception I've seen in _nearly a
-quarter_ of the `volatile` definitions inducing me in mistake previously.
+memory? Not exactly, this is a common misconception I've seen in _nearly half_ 
+of the `volatile` definitions inducing me in mistake previously.
 
 If volatiles were read/written from main memory every time, the performance
 impact would be very underwhelming. The actual cost depends on the CPU

@@ -60,7 +60,7 @@ export default function Blog({ data, pageContext }) {
             <a target="_blank" href={twitterUrl}>
               Twitter
             </a>{' '}
-            or edit this page on{' '}
+            or suggest an improvement on{' '}
             <a target="_blank" href="https://github.com/plourenco/website-blog">
               Github
             </a>
