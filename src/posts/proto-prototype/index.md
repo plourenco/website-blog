@@ -9,18 +9,18 @@ tags: ['javascript']
 
 The proto and the prototype can be two very confusing terms, even though their
 definitions might sound simple. If you've been using Javascript for quite a
-while, you've probably struggled with this terms. In this post I intend to show
+while, you've probably struggled with these terms. In this post, I intend to show
 you a few examples that demonstrate the potential of prototypes.
 
 By definition, and with a
-[quick-search](https://stackoverflow.com/questions/9959727/proto-vs-prototype-in-javascript),
+[quick search](https://stackoverflow.com/questions/9959727/proto-vs-prototype-in-javascript),
 we can agree on the following:
 
 > `__proto__`refers to object used in the lookup chain to resolve fields, while
 > `prototype` is the actual object used to build `__proto__` when a new object
 > is created (**the prototype to install when constructing**).
 
-In practice, this means all instances of a class X will have their `__proto__`
+In practice, this means all instances of class X will have their `__proto__`
 built from X's `prototype`.
 
 ```javascript
@@ -64,8 +64,8 @@ But why? Every time a new object is instantiated from `User`, a new function
 
 # Prototypal inheritance 😳
 
-ES6 provides us the stereotyped `class` syntax. However, under the hood, classes
-are not really something contemporary. To further understand how we can play
+ES6 provides us with the stereotyped `class` syntax. However, under the hood, classes
+are not something contemporary. To further understand how we can play
 with prototypes to implement pre-ES6 inheritance, consider the following
 example:
 
@@ -97,13 +97,13 @@ Let's imagine we want to reproduce the same example but this time there is no
 traditional syntax? Using prototypes!
 
 > [Recall](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions)
-> that, in JavaScript, classes are a special type of functions. And functions
-> are no more than first-class objects, because they can have properties and
+> that, in JavaScript, classes are a special type of function. Functions
+> are no more than first-class objects because they can have properties and
 > methods just like any other object.
 
 The field `name` is pretty straightforward, defined inside a function.
-Conversely the `print` method will be part of `Parent`'s prototype, because when
-an object is instantiated, its `__proto__` will be booted with that exact
+Conversely, the `print` method will be part of `Parent`'s prototype because when
+an object is instantiated, their `__proto__` will be booted with that exact
 method.
 
 ```javascript
@@ -156,7 +156,7 @@ But why `Son.prototype.constructor = Son`?
 
 That's the tricky part. If you carefully analyse the previous line, the `Son`
 prototype is a copy of its `Parent` equivalent, and so is the constructor! We
-need to manually reset the constructor, otherwise it will correspond to a brand
+need to manually reset the constructor otherwise it will correspond to a brand
 new instance of the `Parent`.
 
 If you would like to see more of classes in action, you can also check
