@@ -9,16 +9,16 @@ export default function BlogPage({ data }) {
       <h2>Blog</h2>
       {data.getArticles.nodes.map(
         ({
+          id,
           frontmatter: { title, author, date, category },
           excerpt,
           fields: { readingTime, slug },
-        }) => {
-          return (
-            <Article
-              {...{ title, author, date, category, excerpt, readingTime, slug }}
-            />
-          );
-        }
+        }) => (
+          <Article
+            key={id}
+            {...{ title, author, date, category, excerpt, readingTime, slug }}
+          />
+        )
       )}
     </Layout>
   );

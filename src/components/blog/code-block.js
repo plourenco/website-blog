@@ -15,9 +15,7 @@ const linesToHighlight = meta => {
   if (!match) {
     return () => false;
   }
-  const lines = match[1]
-    .split(',')
-    .map(n => n.split('-').map(n => parseInt(n, 10) - 1));
+  const lines = match[1].split(',').map(n => n.split('-').map(n => +n - 1));
 
   return index =>
     lines.some(([start, end]) =>

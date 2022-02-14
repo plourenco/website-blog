@@ -15,14 +15,12 @@ export default function HomePage({ data }) {
           frontmatter: { title, author, date, category },
           excerpt,
           fields: { readingTime, slug },
-        }) => {
-          return (
-            <Article
-              key={id}
-              {...{ title, author, date, category, excerpt, readingTime, slug }}
-            />
-          );
-        }
+        }) => (
+          <Article
+            key={id}
+            {...{ title, author, date, category, excerpt, readingTime, slug }}
+          />
+        )
       )}
     </Layout>
   );

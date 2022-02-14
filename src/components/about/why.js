@@ -18,11 +18,19 @@ export default function Why() {
         deserve more hits in their page-rank! There is no interest or
         newsletters involved. Most of the posts are written or compiled by me.
         In case you do not agree or feel something could be improved, please{' '}
-        <a target="_blank" href={`https://twitter.com/${twitter}`}>
+        <a
+          target="_blank"
+          href={`https://twitter.com/${twitter}`}
+          rel="noreferrer"
+        >
           contact me
         </a>{' '}
         or suggest an improvement on{' '}
-        <a target="_blank" href="https://github.com/plourenco/website-blog">
+        <a
+          target="_blank"
+          href="https://github.com/plourenco/website-blog"
+          rel="noreferrer"
+        >
           Github
         </a>
         .

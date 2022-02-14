@@ -57,11 +57,14 @@ export default function Blog({ data, pageContext }) {
           <h4>👋 Hey, did you find this content useful?</h4>
           <p>
             Let me know on{' '}
-            <a target="_blank" href={twitterUrl}>
+            <a target="_blank" href={twitterUrl} rel="noreferrer">
               Twitter
             </a>{' '}
             or suggest an improvement on{' '}
-            <a target="_blank" href="https://github.com/plourenco/website-blog">
+            <a
+              target="_blank"
+              href="https://github.com/plourenco/website-blog"
+              rel="noreferrer">
               Github
             </a>
             .
