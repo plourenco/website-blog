@@ -14,6 +14,7 @@ const applyDarkModeClass = `
 
 export const onRenderBody = ({ setPreBodyComponents }) => {
   const script = createElement('script', {
+    key: 'dark-mode',
     dangerouslySetInnerHTML: {
       __html: applyDarkModeClass,
     },
