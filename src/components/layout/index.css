@@ -14,7 +14,7 @@ a {
   transition: color 0.1s linear;
 }
 
-a.muted:not(.badge) {
+a.muted {
   color: var(--text-color);
 }
 
