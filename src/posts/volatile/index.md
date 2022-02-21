@@ -25,8 +25,8 @@ do, this definition just isn't enough.
 
 ## The need by example
 
-Let's assume, in the example below, the two methods `A` and `B` were run by two
-different threads.
+Let's assume, in the example below, the two methods `A` and `B` were run
+concurrently by two different threads.
 
 ```java {7-8}
 /* Adapted from "C# 4 in a Nutshell", Joseph Albahari, Ben Albahari */
@@ -48,7 +48,6 @@ class Foo {
     public static void main(String[] args) throws InterruptedException {
         Foo t = new Foo();
         new Thread(t::B).start();
-        TimeUnit.MILLISECONDS.sleep(100);
         new Thread(t::A).start();
     }
 }
@@ -81,11 +80,11 @@ performance and concurrency?
 ## Is volatile expensive?
 
 Does that actually mean every `volatile` access will be read from the main
-memory? Not exactly, this is a common misconception I've seen in _nearly half_ 
+memory? Not exactly, this is a common misconception I've seen in _nearly half_
 of the `volatile` definitions inducing me in mistake previously.
 
 If volatiles were read/written from main memory every time, the performance
-impact would be very underwhelming. The actual cost depends on the CPU
+impact would be very overwhelming. The actual cost depends on the CPU
 architecture which, in a broader context, using protocols such as the
 [MESI](https://en.wikipedia.org/wiki/MESI_protocol), shares a **coherent cache
 line** allowing other caches to obtain the cached reference from another CPU,
