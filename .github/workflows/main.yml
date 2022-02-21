@@ -14,11 +14,10 @@ jobs:
         yarn install
         yarn run build
     - name: FTP-Deploy-Action
-      uses: SamKirkland/FTP-Deploy-Action@4.0.0
+      uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
         server: ${{ secrets.FTP_HOSTNAME }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: public/
         dangerous-clean-slate: true
-        exclude: .*
