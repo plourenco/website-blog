@@ -45,7 +45,7 @@ module.exports = {
               username: 'plourenco',
             },
           },
-          'gatsby-remark-slug',
+          'gatsby-remark-autolink-headers',
         ],
       },
     },
