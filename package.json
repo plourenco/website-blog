@@ -17,9 +17,9 @@
     "url": "https://github.com/plourenco/personal-website"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.30",
-    "@fortawesome/free-brands-svg-icons": "^5.14.0",
-    "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-brands-svg-icons": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.1.10",
     "@mdx-js/mdx": "^1.6.17",
     "@mdx-js/react": "^1.6.17",
@@ -51,8 +51,8 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "7.28.0",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "husky": "^7.0.4",
-    "lint-staged": "^12.3.4",
+    "husky": "^8.0.1",
+    "lint-staged": "13.0.0",
     "prettier": "^2.1.2"
   },
   "lint-staged": {
