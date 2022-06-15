@@ -25,13 +25,13 @@ of this content, please keep its **attribution** back to
 1. Install the dependencies
 
 ```
-npm install
+yarn install
 ```
 
 2. Start the development server
 
 ```
-npm start
+yarn start
 ```
 
 ## 🚀 Building
@@ -39,11 +39,11 @@ npm start
 1. Generate a production build
 
 ```
-npm run build
+yarn run build
 ```
 
 2. Preview the build
 
 ```
-npm run serve
+yarn run serve
 ```
