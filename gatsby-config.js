@@ -45,7 +45,12 @@ module.exports = {
               username: 'plourenco',
             },
           },
-          'gatsby-remark-autolink-headers',
+          {
+            resolve: 'gatsby-remark-autolink-headers',
+            options: {
+              icon: false,
+            },
+          },
         ],
       },
     },
