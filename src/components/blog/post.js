@@ -1,11 +1,11 @@
 import React from 'react';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { MDXProvider } from '@mdx-js/react';
 import { graphql, Link as GatsbyLink } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Badge from 'react-bootstrap/Badge';
 import Layout from '../layout';
+import Icon from '../layout/icon';
 import Anchor from './anchor';
 import CodeBlock from './code-block';
 import Note from './note';
@@ -64,7 +64,8 @@ export default function Blog({ data, pageContext }) {
             <a
               target="_blank"
               href="https://github.com/plourenco/website-blog"
-              rel="noreferrer">
+              rel="noreferrer"
+            >
               Github
             </a>
             .
@@ -101,7 +102,8 @@ function Link({ children, href }) {
     <a
       href={href}
       target={onPage ? null : '_blank'}
-      rel={onPage ? null : 'noopener noreferrer'}>
+      rel={onPage ? null : 'noopener noreferrer'}
+    >
       {children}
     </a>
   );
@@ -110,7 +112,7 @@ function Link({ children, href }) {
 function List({ children, ...rest }) {
   return (
     <li {...rest}>
-      <FontAwesomeIcon icon={faAngleRight} />
+      <Icon icon={faAngleRight} />
       <span>{children}</span>
     </li>
   );

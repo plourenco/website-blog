@@ -5,6 +5,7 @@ import { Link } from 'gatsby';
 import { Nav, Navbar } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import * as styles from './header.module.css';
+import Icon from './icon';
 import { ThemeContext } from './theme';
 
 export default function Header() {
@@ -14,7 +15,8 @@ export default function Header() {
     <Navbar
       expand="lg"
       className={styles.navbar}
-      variant={isDarkMode ? 'dark' : 'light'}>
+      variant={isDarkMode ? 'dark' : 'light'}
+    >
       <Container>
         <Navbar.Brand>
           <Link to="/" className={styles.brand}>
@@ -23,7 +25,7 @@ export default function Header() {
         </Navbar.Brand>
         <div className={styles.right}>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <FontAwesomeIcon
+          <Icon
             icon={isDarkMode ? faMoon : faAdjust}
             onClick={() => setDarkMode(!isDarkMode)}
             className={styles.theme}

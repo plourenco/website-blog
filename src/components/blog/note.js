@@ -1,6 +1,6 @@
 import React from 'react';
 import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Icon from '../layout/icon';
 import * as styles from './note.module.css';
 
 export default function Note({ color, children }) {
@@ -9,7 +9,7 @@ export default function Note({ color, children }) {
     : 'alert';
   return (
     <div className={`${styles[_color]}`}>
-      <FontAwesomeIcon icon={faExclamationCircle} />
+      <Icon icon={faExclamationCircle} />
       <div className={styles.text}>{children}</div>
     </div>
   );
