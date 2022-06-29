@@ -80,8 +80,9 @@ performance and concurrency?
 ## Is volatile expensive?
 
 Does that actually mean every `volatile` access will be read from the main
-memory? Not exactly, this is a common misconception I've seen in _nearly half_
-of the `volatile` definitions inducing me in mistake previously.
+memory? **No**, this is a common misconception I've seen in _nearly half_ of the
+`volatile` definitions inducing me in mistake previously. That is actually a
+property of the target hardware.
 
 If volatiles were read/written from main memory every time, the performance
 impact would be very overwhelming. The actual cost depends on the CPU
@@ -120,10 +121,21 @@ Taking coherency in consideration, it leads us to another important question:
 
 Besides visibility, cache coherency is not sufficient to guarantee the
 instruction ordering. If 2 cores write to the same line simultaneously, MESI
-protocol only guarantees that these writes will have _some_ order, **not a
-specific one you might expect**.[^4] Two threads might still read from that same
-memory address in-between, read the exact same values, but not in the order you
-initially designed it.
+protocol only guarantees _some_ order, **not a specific one you might
+expect**.[^4] Coherence says nothing about **when** writes will become visible.
+[^7]
+
+```
+initially A = B = 0
+process 1               process 2
+store A := 1            load B (gets 1)
+store B := 1            load A (gets 0)
+```
+
+The trace above is expected to load `A` and `B` as 1, but instead could be seen
+in the wrong order. It is still coherent, as the writes to `A` and `B` are
+**eventually** visible to process 2. [^8] Both processes will have a coherent
+view of the memory, but not soon enough.
 
 <Note>
 
@@ -152,7 +164,7 @@ don't need some ordering guarantees for a shared variable. <u>But optimisations
 happen based on the as-if rule for the language memory model, not the target
 hardware.</u>[^6]
 
-## Is volatile atomic?
+## Does volatile mean atomic?
 
 The effect of a volatile read or write is that the individual operation will be
 atomic. However, an operation such as `i++`, where `i` is effectively atomic, is
@@ -174,3 +186,9 @@ atomic since the respective thread might be interrupted in the meantime.
 
 [^6]:
     [How does memory re-ordering help processors and compilers](https://stackoverflow.com/questions/37725497/how-does-memory-reordering-help-processors-and-compilers)
+
+[^7]:
+    [Consistency vs. coherence](https://people.engr.ncsu.edu/efg/506/s01/lectures/notes/lec14.pdf)
+
+[^8]:
+    [Memory consistency vs cache coherence](https://cs.stackexchange.com/questions/20044/memory-consistency-vs-cache-coherence)
