@@ -24,7 +24,7 @@ const linesToHighlight = meta => {
 };
 
 export default function CodeBlock({ children, className, metastring }) {
-  const language = className.replace(/language-/, '') || '';
+  const language = className ? className.replace(/language-/, '') : '';
   const highlight = linesToHighlight(metastring);
 
   return (
@@ -32,7 +32,8 @@ export default function CodeBlock({ children, className, metastring }) {
       {...defaultProps}
       code={children}
       language={language}
-      theme={nightOwl}>
+      theme={nightOwl}
+    >
       {({ style, tokens, getLineProps, getTokenProps }) => (
         <pre className={styles.pre} style={{ ...style }}>
           {tokens.map((line, index) => {
