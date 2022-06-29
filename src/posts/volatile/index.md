@@ -14,7 +14,7 @@ There are two important concepts to achieve in a multi-threading environment:
 **Visibility** and **Atomicity**.
 
 The `volatile` keyword ensures that updates to a variable are propagated
-predictably to other threads.[^2] Prevents the compiler from re-ordering
+predictably to other threads.[^1] Prevents the compiler from re-ordering
 instructions (derived from, such as, optimisations) **and** its variable from
 being cached in registers hidden from other threads. `Volatile` targets
 **visibility** by <u>guaranteeing it returns the most recent value by any
@@ -96,7 +96,7 @@ reducing the memory hits.
 > 3</cite>
 
 Keeping the caches coherent enforces that when two threads read from the same
-memory address, they should never simultaneously read different values.[^3]
+memory address, they should never simultaneously read different values.[^2]
 
 This is accomplished by a set of states:
 
@@ -122,8 +122,8 @@ Taking coherency in consideration, it leads us to another important question:
 Besides visibility, cache coherency is not sufficient to guarantee the
 instruction ordering. If 2 cores write to the same line simultaneously, MESI
 protocol only guarantees _some_ order, **not a specific one you might
-expect**.[^4] Coherence says nothing about **when** writes will become visible.
-[^7]
+expect**.[^3] Coherence says nothing about **when** writes will become visible.
+[^4]
 
 ```
 initially A = B = 0
@@ -134,13 +134,13 @@ store B := 1            load A (gets 0)
 
 The trace above is expected to load `A` and `B` as 1, but instead could be seen
 in the wrong order. It is still coherent, as the writes to `A` and `B` are
-**eventually** visible to process 2. [^8] Both processes will have a coherent
+**eventually** visible to process 2. [^5] Both processes will have a coherent
 view of the memory, but not soon enough.
 
 <Note>
 
 Some **x86** and **x64** processors implement a strong memory model where memory
-access is effectively volatile[^5], but unless they guarantee **sequential
+access is effectively volatile[^6], but unless they guarantee **sequential
 consistency**, re-orderings are allowed.
 
 </Note>
@@ -155,14 +155,14 @@ from memory, but the second tries to skip it re-using the value in the register.
 
 CPU registers are special temporary locations that facilitate some CPU
 operations. While the cache is a high-speed volatile memory, closer to the CPU,
-that helps reducing main memory hits.[^1]
+that helps reducing main memory hits.[^7]
 
 </Note>
 
 Some programmers might consider that since they're compiling for `x86`, they
 don't need some ordering guarantees for a shared variable. <u>But optimisations
 happen based on the as-if rule for the language memory model, not the target
-hardware.</u>[^6]
+hardware.</u>[^8]
 
 ## Does volatile mean atomic?
 
@@ -171,24 +171,24 @@ atomic. However, an operation such as `i++`, where `i` is effectively atomic, is
 decomposed into two operations `i = i + 1` (read and write), which are not
 atomic since the respective thread might be interrupted in the meantime.
 
-[^1]:
-    [Are CPU registers and CPU cache different?](https://stackoverflow.com/questions/3500491/are-cpu-registers-and-cpu-cache-different)
-
-[^2]: _Java Concurrency in Practice_, Brian Goetz et al.
-[^3]:
+[^1]: _Java Concurrency in Practice_, Brian Goetz et al.
+[^2]:
     [Myths programmers believe about CPU caches](https://software.rajivprab.com/2018/04/29/myths-programmers-believe-about-cpu-caches/)
 
-[^4]:
+[^3]:
     [Is the MESI protocol enough?](https://stackoverflow.com/questions/27522190/is-the-mesi-protocol-enough-or-are-memory-barriers-still-required-intel-cpus)
 
-[^5]:
-    [Volatile keyword in C memory model explained](https://igoro.com/archive/volatile-keyword-in-c-memory-model-explained/)
-
-[^6]:
-    [How does memory re-ordering help processors and compilers](https://stackoverflow.com/questions/37725497/how-does-memory-reordering-help-processors-and-compilers)
-
-[^7]:
+[^4]:
     [Consistency vs. coherence](https://people.engr.ncsu.edu/efg/506/s01/lectures/notes/lec14.pdf)
 
-[^8]:
+[^5]:
     [Memory consistency vs cache coherence](https://cs.stackexchange.com/questions/20044/memory-consistency-vs-cache-coherence)
+
+[^6]:
+    [Volatile keyword in C memory model explained](https://igoro.com/archive/volatile-keyword-in-c-memory-model-explained/)
+
+[^7]:
+    [Are CPU registers and CPU cache different?](https://stackoverflow.com/questions/3500491/are-cpu-registers-and-cpu-cache-different)
+
+[^8]:
+    [How does memory re-ordering help processors and compilers](https://stackoverflow.com/questions/37725497/how-does-memory-reordering-help-processors-and-compilers)
