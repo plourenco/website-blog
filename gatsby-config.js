@@ -6,6 +6,7 @@ module.exports = {
     description: 'Personal website and blog by Pedro Lourenço.',
     author: 'Pedro Lourenço',
     url: 'https://plourenco.com',
+    siteUrl: 'https://plourenco.com',
     keywords: 'software, engineer, java, javascript, react, pedro, lourenco',
     social: {
       twitter: 'pedroglourenco',
@@ -69,5 +70,6 @@ module.exports = {
         trackingId: 'UA-175446640-1',
       },
     },
+    'gatsby-plugin-advanced-sitemap',
   ],
 };
