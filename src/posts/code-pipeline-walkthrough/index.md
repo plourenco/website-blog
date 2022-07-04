@@ -1,5 +1,6 @@
 ---
 title: ☁️ Using CodePipeline to Automate Serverless Application Deployment
+alt: Using CodePipeline to Automate Serverless Application Deployment
 category: Aws
 date: 2019-11-23
 author: Pedro Lourenço

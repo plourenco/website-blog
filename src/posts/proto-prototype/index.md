@@ -1,5 +1,6 @@
 ---
 title: 🤯 The Proto and the Prototype
+alt: The difference between Proto and Prototype
 category: Javascript
 date: 2020-08-05
 author: Pedro Lourenço
@@ -9,8 +10,8 @@ tags: ['javascript']
 
 The proto and the prototype can be two very confusing terms, even though their
 definitions might sound simple. If you've been using Javascript for quite a
-while, you've probably struggled with these terms. In this post, I intend to show
-you a few examples that demonstrate the potential of prototypes.
+while, you've probably struggled with these terms. In this post, I intend to
+show you a few examples that demonstrate the potential of prototypes.
 
 By definition, and with a
 [quick search](https://stackoverflow.com/questions/9959727/proto-vs-prototype-in-javascript),
@@ -64,8 +65,8 @@ But why? Every time a new object is instantiated from `User`, a new function
 
 # Prototypal inheritance 😳
 
-ES6 provides us with the stereotyped `class` syntax. However, under the hood, classes
-are not something contemporary. To further understand how we can play
+ES6 provides us with the stereotyped `class` syntax. However, under the hood,
+classes are not something contemporary. To further understand how we can play
 with prototypes to implement pre-ES6 inheritance, consider the following
 example:
 
@@ -97,9 +98,9 @@ Let's imagine we want to reproduce the same example but this time there is no
 traditional syntax? Using prototypes!
 
 > [Recall](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions)
-> that, in JavaScript, classes are a special type of function. Functions
-> are no more than first-class objects because they can have properties and
-> methods just like any other object.
+> that, in JavaScript, classes are a special type of function. Functions are no
+> more than first-class objects because they can have properties and methods
+> just like any other object.
 
 The field `name` is pretty straightforward, defined inside a function.
 Conversely, the `print` method will be part of `Parent`'s prototype because when

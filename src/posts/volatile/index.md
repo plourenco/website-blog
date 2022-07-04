@@ -1,5 +1,6 @@
 ---
-title: ❄️ Volatile
+title: ❄️ The Volatile Keyword
+alt: The Volatile Keyword
 category: Concurrency
 date: 2020-10-10
 author: Pedro Lourenço
@@ -7,8 +8,8 @@ published: true
 tags: ['concurrency', 'compilers', 'cpu']
 ---
 
-> The fun part about about analyzing race conditions is that anything can
-> happen - so most of your assumptions will probably be right.
+> The fun part about analyzing race conditions is that anything can happen - so
+> most of your assumptions will probably be right.
 
 There are two important concepts to achieve in a multi-threading environment:
 **Visibility** and **Atomicity**.

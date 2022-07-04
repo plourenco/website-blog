@@ -8,15 +8,13 @@ export default function BlogPage({ data }) {
     <Layout>
       <h2>Blog</h2>
       {data.getArticles.nodes.map(
-        ({
-          id,
-          frontmatter: { title, author, date, category },
-          excerpt,
-          fields: { readingTime, slug },
-        }) => (
+        ({ id, frontmatter, excerpt, fields: { readingTime, slug } }) => (
           <Article
             key={id}
-            {...{ title, author, date, category, excerpt, readingTime, slug }}
+            {...frontmatter}
+            excerpt={excerpt}
+            readingTime={readingTime}
+            slug={slug}
           />
         )
       )}

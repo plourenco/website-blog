@@ -5,6 +5,7 @@ import { graphql, Link as GatsbyLink } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Badge from 'react-bootstrap/Badge';
 import Layout from '../layout';
+import Helmet from '../layout/helmet';
 import Icon from '../layout/icon';
 import Anchor from './anchor';
 import CodeBlock from './code-block';
@@ -25,7 +26,7 @@ const components = {
 
 export default function Blog({ data, pageContext }) {
   const {
-    frontmatter: { title, date, category, tags },
+    frontmatter: { title, date, category, tags, alt },
     body,
     fields: { readingTime },
   } = data.mdx;
@@ -35,6 +36,10 @@ export default function Blog({ data, pageContext }) {
   )}`;
   return (
     <Layout>
+      <Helmet>
+        <title lang="en">{alt || title}</title>
+        <meta property="og:title" content={alt || title} />
+      </Helmet>
       <article className={styles.blog}>
         <header className="mb-5">
           <h1>{title}</h1>
@@ -82,6 +87,7 @@ export const query = graphql`
       body
       frontmatter {
         title
+        alt
         date(formatString: "MMM DD, YYYY")
         category
         tags
