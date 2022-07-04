@@ -25,6 +25,7 @@
     "@mdx-js/react": "^1.6.17",
     "bootstrap": "4.5.2",
     "gatsby": "^4.3.0",
+    "gatsby-plugin-advanced-sitemap": "^2.1.0",
     "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-google-analytics": "^4.3.0",
     "gatsby-plugin-mdx": "^3.3.0",
