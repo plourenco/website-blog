@@ -108,7 +108,7 @@ module.exports = {
                 ) {
                   edges {
                     node {
-                      excerpt(pruneLength: 500)
+                      excerpt(pruneLength: 1000)
                       frontmatter {
                         alt
                         date(formatString: "MMM DD, YYYY")
