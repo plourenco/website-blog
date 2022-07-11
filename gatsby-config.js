@@ -104,6 +104,7 @@ module.exports = {
                 allMdx(
                   limit: 100,
                   sort: { fields: [frontmatter___date], order: DESC }
+                  filter: { frontmatter: { published: { eq: true } } }
                 ) {
                   edges {
                     node {
