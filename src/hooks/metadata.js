@@ -9,7 +9,7 @@ export function useMetadata() {
         siteMetadata {
           title
           description
-          url
+          siteUrl
           keywords
           social {
             twitter

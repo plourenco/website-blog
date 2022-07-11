@@ -30,12 +30,12 @@ export default function Layout({ children }) {
       <Helmet>
         <title lang="en">{meta.title}</title>
         <meta name="description" content={meta.description} />
-        <link rel="canonical" href={meta.url} />
+        <link rel="canonical" href={meta.siteUrl} />
         <meta name="keywords" content={meta.keywords} />
         <meta property="og:title" content={meta.title} />
         <meta property="og:description" content={meta.description} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={meta.url} />
+        <meta property="og:url" content={meta.siteUrl} />
         <meta property="og:site_name" content={meta.title} />
         <meta property="og:locale" content="en_GB" />
 

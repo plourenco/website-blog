@@ -5,7 +5,6 @@ module.exports = {
     title: 'Pedro Lourenço — Software Engineer',
     description: 'Personal website and blog by Pedro Lourenço.',
     author: 'Pedro Lourenço',
-    url: 'https://plourenco.com',
     siteUrl: 'https://plourenco.com',
     keywords: 'software, engineer, java, javascript, react, pedro, lourenco',
     social: {
@@ -29,12 +28,12 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-mdx`,
+      resolve: 'gatsby-plugin-mdx',
       options: {
-        extensions: [`.mdx`, `.md`],
+        extensions: ['.mdx', '.md'],
         gatsbyRemarkPlugins: [
           {
-            resolve: `gatsby-remark-images`,
+            resolve: 'gatsby-remark-images',
             options: {
               disableBgImage: true,
               showCaptions: true,
@@ -56,20 +55,75 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/posts`,
-        name: `posts`,
+        name: 'posts',
       },
     },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: 'UA-175446640-1',
       },
     },
     'gatsby-plugin-advanced-sitemap',
+    {
+      resolve: 'gatsby-plugin-feed',
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMdx } }) =>
+              allMdx.edges.map(
+                ({ node: { frontmatter, fields, excerpt } }) => ({
+                  ...frontmatter,
+                  title: frontmatter.alt,
+                  description: excerpt,
+                  date: frontmatter.date,
+                  url: site.siteMetadata.siteUrl + fields.slug,
+                  guid: site.siteMetadata.siteUrl + fields.slug,
+                  categories: frontmatter.tags,
+                })
+              ),
+            query: `
+              {
+                allMdx(
+                  limit: 100,
+                  sort: { fields: [frontmatter___date], order: DESC }
+                ) {
+                  edges {
+                    node {
+                      excerpt(pruneLength: 500)
+                      frontmatter {
+                        alt
+                        date(formatString: "MMM DD, YYYY")
+                        tags
+                      }
+                      fields { slug }
+                    }
+                  }
+                }
+              }
+            `,
+            output: '/rss.xml',
+            title: "Pedro Lourenço's Blog",
+          },
+        ],
+      },
+    },
   ],
 };
