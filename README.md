@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-🙋‍♂️ My personal website, made in React (<a href="https://plourenco.com">plourenco.com</a>, <a href="http://pedrolourenco.net">pedrolourenco.net</a>)
+🙋‍♂️ My personal website, made in React (<a href="https://plourenco.com">plourenco.com</a>)
 </p>
 
 ![CI](https://github.com/plourenco/website-blog/workflows/CI/badge.svg)
@@ -11,13 +11,12 @@
 ## Why open source?
 
 I find value in showcasing how I built my personal website and accept
-contributions from others. I also believe each one's brand is identified by
-their unique fingerprint, not something that can be easily reproduced.
+contributions from others.
 
-I found inspiration among many other personal websites, I hope you can find one
+I also found inspiration amongst many other personal websites, I hope you can find one
 here too. However, I also spent many hours and iterations trying to find
 something I identified myself with. For that reason, if you decide to use part
-of this content, please keep its **attribution** back to
+of this content, please keep an **attribution** mention back to
 [plourenco.com](https://plourenco.com).
 
 ## 👨‍💻 Instalation
