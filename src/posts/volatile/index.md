@@ -121,10 +121,13 @@ Taking coherency in consideration, it leads us to another important question:
 ### Why do we still need volatile over the previously explained cache-coherency?
 
 Besides visibility, cache coherency is not sufficient to guarantee the
-instruction ordering. If 2 cores write to the same line simultaneously, MESI
-protocol only guarantees _some_ order, **not a specific one you might
-expect**.[^3] Coherence says nothing about **when** writes will become visible.
-[^4]
+instruction order. Coherence seeks to make the caches of a shared-memory system
+functionally invisible, a programmer should not be able to determine whether the
+system has caches by analyzing the result of loads and stores. [^4]
+
+If 2 cores write to the same line simultaneously, MESI protocol only guarantees
+_some_ order, **not a specific one you might expect**.[^3] Coherence says
+nothing about **when** writes will become visible.
 
 ```
 initially A = B = 0
@@ -134,9 +137,10 @@ store B := 1            load A (gets 0)
 ```
 
 The trace above is expected to load `A` and `B` as 1, but instead could be seen
-in the wrong order. It is still coherent, as the writes to `A` and `B` are
-**eventually** visible to process 2. [^5] Both processes will have a coherent
-view of the memory, but not soon enough.
+in the wrong order. It is still coherent, there is no stale data (incoherence)
+as the writes to `A` and `B` are **eventually** visible to process 2, but the
+stores are already reordered. [^5] Both processes will have a coherent view of
+the memory, but not soon enough.
 
 <Note>
 
@@ -180,7 +184,7 @@ atomic since the respective thread might be interrupted in the meantime.
     [Is the MESI protocol enough?](https://stackoverflow.com/questions/27522190/is-the-mesi-protocol-enough-or-are-memory-barriers-still-required-intel-cpus)
 
 [^4]:
-    [Consistency vs. coherence](https://people.engr.ncsu.edu/efg/506/s01/lectures/notes/lec14.pdf)
+    _A Primer on Memory Consistency and Cache Coherence_, Daniel J. Sorin et al.
 
 [^5]:
     [Memory consistency vs cache coherence](https://cs.stackexchange.com/questions/20044/memory-consistency-vs-cache-coherence)
