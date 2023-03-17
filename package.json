@@ -28,7 +28,7 @@
     "gatsby-plugin-advanced-sitemap": "^2.1.0",
     "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-feed": "^4.18.0",
-    "gatsby-plugin-google-analytics": "^4.3.0",
+    "gatsby-plugin-google-gtag": "^5.7.0",
     "gatsby-plugin-mdx": "^3.18.0",
     "gatsby-plugin-sharp": "^4.3.0",
     "gatsby-remark-autolink-headers": "^5.16.0",

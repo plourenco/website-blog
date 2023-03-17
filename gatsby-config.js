@@ -64,9 +64,14 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
-      resolve: 'gatsby-plugin-google-analytics',
+      resolve: 'gatsby-plugin-google-gtag',
       options: {
-        trackingId: 'UA-175446640-1',
+        trackingIds: ['G-22CTK6K8MP'],
+      },
+      gtagConfig: {
+        optimize_id: 'OPT_CONTAINER_ID',
+        anonymize_ip: true,
+        cookie_expires: 0,
       },
     },
     'gatsby-plugin-advanced-sitemap',
