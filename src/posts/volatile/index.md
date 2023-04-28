@@ -121,9 +121,10 @@ Taking coherency in consideration, it leads us to another important question:
 ### Why do we still need volatile over the previously explained cache-coherency?
 
 Besides visibility, cache coherency is not sufficient to guarantee the
-instruction order. Coherence seeks to make the caches of a shared-memory system
-functionally invisible, a programmer should not be able to determine whether the
-system has caches by analyzing the result of loads and stores. [^4]
+instruction order. <u>Coherence seeks to make the caches of a shared-memory
+system functionally invisible, a programmer should not be able to determine
+whether the system has caches by analyzing the result of loads and
+stores.[^4]</u>
 
 If 2 cores write to the same line simultaneously, MESI protocol only guarantees
 _some_ order, **not a specific one you might expect**.[^3] Coherence says
