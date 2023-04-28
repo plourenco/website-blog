@@ -15,7 +15,7 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <Container className="d-flex justify-content-between">
-        <span>Pedro © 2022</span>
+        <span>Pedro © 2023</span>
         <div className={styles.icons}>
           <a
             target="_blank"
