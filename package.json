@@ -43,7 +43,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@svgr/webpack": "^6.1.1",
+    "@svgr/webpack": "^8.0.1",
     "eslint": "8.6.0",
     "eslint-config-react-app": "^7.0.0",
     "eslint-plugin-import": "2.25.4",
