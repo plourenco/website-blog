@@ -26,17 +26,11 @@ export default function About() {
         </a>
       </p>
       <p>
-        My first contact with computers started very soon, at the age of 6. A
-        few years later, I started exploring Java using minecraft mechanics; a
-        truly fun and enriching hobby that lead me to pursue my BSc.
-      </p>
-      <p>
         My career started building software for finance, as I worked in a
         quantitative investment management firm that specialized in modelling
-        financial markets. Most recently, I've worked at CERN, after moving to{' '}
-        <span className="highlight danger">Switzerland</span> 🇨🇭, helping
-        maintain an open source project and collaboration services implemented
-        throughout the organization.
+        financial markets. Presently, I'm part of Cisco, working on advanced
+        solutions for a better customer experience. With a passion for learning
+        and an insatiable curiosity, I rarely settle for comfort.
       </p>
       <p>
         I follow an ever-evolving stack of technologies, including some within
