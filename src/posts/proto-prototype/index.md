@@ -121,7 +121,7 @@ Parent.print = function () {
 
 Now for the real challenge, we're tackling `Son`'s inheritance.
 
-- First, we need to ensure each object of `Son` will contain the `print` method.
+1. First, we must ensure each object of `Son` will contain the `print` method.
   This means `Son`'s prototype is similar to `Parent`.
 
 ```javascript {5}
@@ -132,14 +132,14 @@ function Son() {
 Son.prototype = Object.create(Parent.prototype);
 ```
 
-- Then, we want to apply the static method. In other words, we can let `Son`'s
-  `__proto__` refer to `Parent` in the lookup chain to its resolve fields.
+2. Then, we want to apply the static method. In other words, we can let `Son`'s
+  `__proto__` refer to `Parent` in the lookup chain to resolve its fields.
 
 ```javascript
 Son.__proto__ = Parent;
 ```
 
-- Finally, `Parent` function will be invoked replacing the context of `this`
+3. Finally, `Parent` function will be invoked replacing the context of `this`
   with `Son`'s instance. This is the exact purpose of
   [`call`](https://developer.mozilla.org/pt-PT/docs/Web/JavaScript/Reference/Global_Objects/Function/Call).
 
