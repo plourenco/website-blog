@@ -28,9 +28,11 @@ export default function About() {
       <p>
         My career started building software for finance, as I worked in a
         quantitative investment management firm that specialized in modelling
-        financial markets. Presently, I'm part of Cisco, working on advanced
-        solutions for a better customer experience. With a passion for learning
-        and an insatiable curiosity, I rarely settle for comfort.
+        financial markets. Presently, I'm part of Marcura, where I work on a
+        fintech platform for maritime payments featuring a digital wallet and
+        in-house ledgering. Previously, I've been with Cisco, CERN, and
+        CreightonAI. With a passion for learning and an insatiable curiosity, I
+        rarely settle for comfort.
       </p>
       <p>
         I follow an ever-evolving stack of technologies, including some within

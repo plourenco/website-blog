@@ -9,7 +9,7 @@ tags: ['concurrency', 'compilers', 'cpu']
 ---
 
 > The fun part about analyzing race conditions is that anything can happen - so
-> most of your assumptions will probably be right.
+> most of your assumptions will probably be right. - <cite>Unknown</cite>
 
 There are two important concepts to achieve in a multi-threading environment:
 **Visibility** and **Atomicity**.
@@ -93,7 +93,7 @@ line** allowing other caches to obtain the cached reference from another CPU,
 reducing the memory hits.
 
 > The `volatile` modifier guarantees that any thread that reads a field will see
-> the most recently written value. -- <cite>Joshua Bloch in Effective Java
+> the most recently written value. - <cite>Joshua Bloch in Effective Java
 > 3</cite>
 
 Keeping the caches coherent enforces that when two threads read from the same
