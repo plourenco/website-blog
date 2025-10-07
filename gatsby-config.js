@@ -43,6 +43,8 @@ module.exports = {
             resolve: 'gatsby-remark-embed-gist',
             options: {
               username: 'plourenco',
+              gistCssUrlAddress:
+                'https://github.githubassets.com/assets/gist-embed-7190c9c945ad.css',
             },
           },
           {
