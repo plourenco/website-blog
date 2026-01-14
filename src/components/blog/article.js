@@ -20,10 +20,8 @@ export function Article({
           {category}
         </Badge>
       </Link>
-      {author && <small className="text-muted d-block">{author}</small>}
-      <small className="text-muted">
-        {date}, {readingTime} min read
-      </small>
+      <small className="text-muted d-block">{readingTime} min read</small>
+      <small className="text-muted d-block">{date}</small>
       {excerpt && (
         <>
           <p className={styles.excerpt}>{excerpt}</p>
