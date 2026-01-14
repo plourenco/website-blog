@@ -12,8 +12,8 @@ export default function Heading() {
           Pedro <a className="highlight">Lourenço</a>
         </h1>
         <h2 className={styles.sub}>
-          A <a className="highlight warning">software</a> engineer interested in
-          software architecture, cloud computing and data visualization.
+          <a className="highlight warning">Software</a> building products at the
+          intersection of finance and software architecture.
         </h2>
       </Col>
       <Col sm={12} md={4} className="d-none d-sm-block">
