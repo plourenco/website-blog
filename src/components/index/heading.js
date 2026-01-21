@@ -12,7 +12,7 @@ export default function Heading() {
           Pedro <a className="highlight">Lourenço</a>
         </h1>
         <h2 className={styles.sub}>
-          <a className="highlight warning">Software</a> building products at the
+          <a className="highlight warning">Software</a> Engineer building products at the
           intersection of finance and software architecture.
         </h2>
       </Col>
